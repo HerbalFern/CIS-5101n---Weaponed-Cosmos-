@@ -3,6 +3,7 @@ Weaponed Cosmos is a 2D Action Adventure Dungeon Crawler. Set in the year 3026, 
 
 
 ## Activity 1
+During this activity, we have done the following tasks according to the instruction document provided by our course instructor: 
 - Downloaded Godot with the latest build then created a new project named "Weaponed Cosmos"
 - Added a Node2D as the root (default when switching to a 2D scene) and added a Sprite2D with the Godot logo as a placeholder.
 - Setup the Github repo with a .gitignore file, a README.md file and also initializing the local repository with Git LFS (wav and png files)
