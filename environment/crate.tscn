@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ukgn63rtxhjn"]
+
+[ext_resource type="Texture2D" uid="uid://ckgpbjgacso8k" path="res://dummy_crate.png" id="1_weern"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgyou"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=777768444]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=150571835]
+scale = Vector2(1.1875, 1.1875)
+texture = ExtResource("1_weern")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1480526318]
+shape = SubResource("RectangleShape2D_vgyou")

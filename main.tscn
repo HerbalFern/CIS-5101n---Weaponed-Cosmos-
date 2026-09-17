@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cwipsux1pe4le"]
+
+[ext_resource type="PackedScene" uid="uid://d0us1nlwyj0f7" path="res://Player/player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ukgn63rtxhjn" path="res://environment/crate.tscn" id="2_0xm2m"]
+
+[node name="Node2D" type="Node2D" unique_id=385392631]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1348608096]
+zoom = Vector2(4, 4)
+
+[node name="CharacterBody2D" parent="." unique_id=1233974641 instance=ExtResource("1_ig7tw")]
+
+[node name="StaticBody2D" parent="." unique_id=777768444 instance=ExtResource("2_0xm2m")]
+position = Vector2(-36, 0)

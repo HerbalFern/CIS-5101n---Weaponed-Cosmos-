@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d0us1nlwyj0f7"]
+
+[ext_resource type="Script" uid="uid://l55a730hkxg0" path="res://character_body_2d.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://d00mcak2f5i3y" path="res://dummy_sprite.png" id="2_btcbx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntj2e"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1233974641]
+script = ExtResource("1_4ntmi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1225782086]
+shape = SubResource("CapsuleShape2D_ntj2e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=384573364]
+texture = ExtResource("2_btcbx")
