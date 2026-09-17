@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bqukiy5x51221"]
+
+[ext_resource type="AudioStream" uid="uid://dm3ceibtw8ko" path="res://environment/freesound_community-loud-thud-45719.mp3" id="1_x711e"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=999422019]
+stream = ExtResource("1_x711e")

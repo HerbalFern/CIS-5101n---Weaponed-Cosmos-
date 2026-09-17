@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://ukgn63rtxhjn"]
 
 [ext_resource type="Texture2D" uid="uid://ckgpbjgacso8k" path="res://dummy_crate.png" id="1_weern"]
+[ext_resource type="Script" uid="uid://kxw1vstyr0fu" path="res://environment/area_2d.gd" id="2_kq0vi"]
+[ext_resource type="PackedScene" uid="uid://bqukiy5x51221" path="res://environment/thud.tscn" id="3_m1ide"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgyou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qmnk"]
+size = Vector2(31, 29.5)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=777768444]
 
@@ -12,3 +17,11 @@ texture = ExtResource("1_weern")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1480526318]
 shape = SubResource("RectangleShape2D_vgyou")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=976816891]
+script = ExtResource("2_kq0vi")
+
+[node name="AudioStreamPlayer2D" parent="Area2D" unique_id=999422019 instance=ExtResource("3_m1ide")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1058678506]
+shape = SubResource("RectangleShape2D_1qmnk")
