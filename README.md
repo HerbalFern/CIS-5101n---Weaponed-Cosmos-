@@ -9,3 +9,11 @@ During this activity, we have done the following tasks according to the instruct
 - Setup the Github repo with a .gitignore file, a README.md file and also initializing the local repository with Git LFS (wav and png files)
 - Pushed the files while settling git merge conflicts
 - Wrote this README.md file
+
+
+## Activity 2
+During this activity, we have done the following tasks according to the instruction document provided by our course instructor: 
+- Created Basic Sprites for my game
+- Added basic Movements (Up, Down, Left, Right)
+- Adding A Collision Model (crate)
+- Added a collision sound detection (extra juice) 
