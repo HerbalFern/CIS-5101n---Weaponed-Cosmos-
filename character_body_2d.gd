@@ -1,22 +1,37 @@
 extends CharacterBody2D
 
+const SPEED := 120.0
+const BULLET := preload("res://bullet.tscn")
+const FIRE_DELAY := 0.25
 
-const SPEED = 60.0
+var facing := Vector2.DOWN
+var can_shoot := true
 
-var input_direction: get = _get_input_direction
-var sprite_direction
+@onready var muzzle: Marker2D = $Muzzle
 
-@onready var sprite = $Sprite2D
+func _physics_process(_delta: float) -> void:
+	var dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
-func _physics_process(_delta):
-	print("running")
-	print(input_direction)
-	velocity = input_direction * SPEED
+	# Snap facing to 4 directions, Zelda-style
+	if dir != Vector2.ZERO:
+		if abs(dir.x) > abs(dir.y):
+			facing = Vector2(sign(dir.x), 0)
+		else:
+			facing = Vector2(0, sign(dir.y))
+
+	velocity = dir * SPEED
 	move_and_slide()
 
-func _get_input_direction():
-	var x = -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
-	var y = -int(Input.is_action_pressed("ui_up")) + int(Input.is_action_pressed("ui_down"))
-	return Vector2(x,y).normalized()
-	
-	 
+	muzzle.position = facing * 12
+
+	if Input.is_action_pressed("shoot") and can_shoot:
+		shoot()
+
+func shoot() -> void:
+	can_shoot = false
+	var bullet := BULLET.instantiate()
+	bullet.global_position = muzzle.global_position
+	bullet.direction = facing
+	get_tree().current_scene.add_child(bullet)
+	await get_tree().create_timer(FIRE_DELAY).timeout
+	can_shoot = true

@@ -1,15 +1,27 @@
 [gd_scene format=3 uid="uid://d0us1nlwyj0f7"]
 
-[ext_resource type="Script" uid="uid://l55a730hkxg0" path="res://character_body_2d.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://d00mcak2f5i3y" path="res://dummy_sprite.png" id="2_btcbx"]
+[ext_resource type="Texture2D" uid="uid://bwik2neyif3n4" path="res://character_full.png" id="1_4ntmi"]
+[ext_resource type="AudioStream" uid="uid://dm3ceibtw8ko" path="res://environment/freesound_community-loud-thud-45719.mp3" id="2_btcbx"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntj2e"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqg75"]
+size = Vector2(15, 15)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1233974641]
-script = ExtResource("1_4ntmi")
+[node name="Player" type="CharacterBody2D" unique_id=1573757356]
+collision_layer = 2
+motion_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1225782086]
-shape = SubResource("CapsuleShape2D_ntj2e")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=781133504]
+texture = ExtResource("1_4ntmi")
+region_enabled = true
+region_rect = Rect2(6.8745584, 7.7940636, 18.315514, 18.408804)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=384573364]
-texture = ExtResource("2_btcbx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=316831289]
+shape = SubResource("RectangleShape2D_xqg75")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1738160194]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=795845587]
+stream = ExtResource("2_btcbx")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2093970731]
+zoom = Vector2(3, 3)
