@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://cwipsux1pe4le"]
 
+[ext_resource type="PackedScene" uid="uid://bep1j55gixqsb" path="res://environment/IntroductoryLevel.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://d0us1nlwyj0f7" path="res://Player/player.tscn" id="2_h2yge"]
+
 [node name="Node2D" type="Node2D" unique_id=385392631]
 
+[node name="TileMapLayer" parent="." unique_id=48721696 instance=ExtResource("1_0xm2m")]
+position = Vector2(0, -1)
+
+[node name="Player" parent="." unique_id=1573757356 instance=ExtResource("2_h2yge")]
+position = Vector2(1, -43)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1348608096]
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)

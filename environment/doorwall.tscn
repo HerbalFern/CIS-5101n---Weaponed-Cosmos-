@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://t3hyap56kn34"]
+
+[ext_resource type="Texture2D" uid="uid://46xfrhmfxohv" path="res://Sprites/wallset1.png" id="1_dos4q"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1536101037]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1862745142]
+texture = ExtResource("1_dos4q")
+region_enabled = true
+region_rect = Rect2(47.83834, 96.57073, 48.16166, 41.840355)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=639165593]

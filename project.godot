@@ -13,7 +13,6 @@ config_version=5
 config/name="Weaponed Cosmos"
 run/main_scene="uid://cwipsux1pe4le"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
 
 [display]
 

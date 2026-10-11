@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bktp7abtbf2jr"]
+
+[ext_resource type="Texture2D" uid="uid://46xfrhmfxohv" path="res://Sprites/wallset1.png" id="1_m7fwe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exriw"]
+size = Vector2(11, 42)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1890570934]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=322079534]
+texture = ExtResource("1_m7fwe")
+region_enabled = true
+region_rect = Rect2(74.721176, 50.70482, 11.850388, 43.46895)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35913803]
+shape = SubResource("RectangleShape2D_exriw")

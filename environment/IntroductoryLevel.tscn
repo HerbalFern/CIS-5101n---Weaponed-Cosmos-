@@ -1,0 +1,266 @@
+[gd_scene format=3 uid="uid://bep1j55gixqsb"]
+
+[ext_resource type="PackedScene" uid="uid://c3avfokf7d3os" path="res://environment/wall2.tscn" id="1_budtw"]
+[ext_resource type="PackedScene" uid="uid://b4i5j4yy73oje" path="res://environment/tile.tscn" id="1_solmu"]
+[ext_resource type="PackedScene" uid="uid://b3gr3d4s6voys" path="res://environment/hatchwall.tscn" id="1_uy0v0"]
+[ext_resource type="PackedScene" uid="uid://hvq20rhfjvtc" path="res://environment/wall1.tscn" id="2_uy0v0"]
+[ext_resource type="PackedScene" uid="uid://bw2b4x40655wd" path="res://environment/sidewall3.tscn" id="3_solmu"]
+[ext_resource type="PackedScene" uid="uid://bpx6ryd5fkqo3" path="res://environment/sidewall1.tscn" id="4_q7i4k"]
+[ext_resource type="PackedScene" uid="uid://lg45h5tq2u72" path="res://environment/sidewall2.tscn" id="5_7ls6d"]
+[ext_resource type="PackedScene" uid="uid://ukgn63rtxhjn" path="res://environment/crate.tscn" id="6_ppy36"]
+[ext_resource type="PackedScene" uid="uid://c51hsbg7mqk0y" path="res://environment/backwallpillar.tscn" id="8_7ls6d"]
+[ext_resource type="PackedScene" uid="uid://c4dk7xitdowkn" path="res://environment/backwall.tscn" id="9_q7i4k"]
+
+[node name="TileMapLayer" type="TileMapLayer" unique_id=48721696]
+
+[node name="Tile34" parent="." unique_id=334661070 instance=ExtResource("1_solmu")]
+position = Vector2(63, 68)
+
+[node name="Tile35" parent="." unique_id=1908871061 instance=ExtResource("1_solmu")]
+position = Vector2(-33, 68)
+
+[node name="Tile36" parent="." unique_id=2083528922 instance=ExtResource("1_solmu")]
+position = Vector2(-9, 68)
+
+[node name="Tile37" parent="." unique_id=1641945561 instance=ExtResource("1_solmu")]
+position = Vector2(15, 68)
+
+[node name="Tile12" parent="Tile37" unique_id=1555665481 instance=ExtResource("1_solmu")]
+position = Vector2(24, 0)
+
+[node name="Tile38" parent="." unique_id=1286515291 instance=ExtResource("1_solmu")]
+position = Vector2(87, 68)
+
+[node name="Tile33" parent="Tile38" unique_id=1617889544 instance=ExtResource("1_solmu")]
+position = Vector2(24, 0)
+
+[node name="Tile39" parent="." unique_id=1309904283 instance=ExtResource("1_solmu")]
+position = Vector2(-105, 68)
+
+[node name="Tile40" parent="." unique_id=559496138 instance=ExtResource("1_solmu")]
+position = Vector2(-81, 68)
+
+[node name="Tile41" parent="." unique_id=192553698 instance=ExtResource("1_solmu")]
+position = Vector2(-57, 68)
+
+[node name="Tile16" parent="." unique_id=115021171 instance=ExtResource("1_solmu")]
+position = Vector2(-33, -4)
+
+[node name="Tile11" parent="Tile16" unique_id=252885149 instance=ExtResource("1_solmu")]
+position = Vector2(-24, 24)
+
+[node name="Tile13" parent="Tile16" unique_id=952063352 instance=ExtResource("1_solmu")]
+position = Vector2(0, 24)
+
+[node name="Tile12" parent="Tile16/Tile13" unique_id=1169998590 instance=ExtResource("1_solmu")]
+position = Vector2(24, 0)
+
+[node name="Tile17" parent="." unique_id=380239707 instance=ExtResource("1_solmu")]
+position = Vector2(-9, -4)
+
+[node name="Tile18" parent="." unique_id=134989772 instance=ExtResource("1_solmu")]
+position = Vector2(15, -4)
+
+[node name="Tile19" parent="." unique_id=235893858 instance=ExtResource("1_solmu")]
+position = Vector2(-33, 20)
+
+[node name="Tile20" parent="." unique_id=324868559 instance=ExtResource("1_solmu")]
+position = Vector2(-9, 20)
+
+[node name="Tile21" parent="." unique_id=591916126 instance=ExtResource("1_solmu")]
+position = Vector2(15, 20)
+
+[node name="Tile22" parent="." unique_id=1848402162 instance=ExtResource("1_solmu")]
+position = Vector2(-33, -4)
+
+[node name="Tile23" parent="." unique_id=811232765 instance=ExtResource("1_solmu")]
+position = Vector2(-9, -4)
+
+[node name="Tile24" parent="." unique_id=1383041743 instance=ExtResource("1_solmu")]
+position = Vector2(15, -4)
+
+[node name="Tile10" parent="." unique_id=1630422244 instance=ExtResource("1_solmu")]
+position = Vector2(39, -28)
+
+[node name="Tile11" parent="." unique_id=309043153 instance=ExtResource("1_solmu")]
+position = Vector2(63, -28)
+
+[node name="Tile12" parent="." unique_id=814138490 instance=ExtResource("1_solmu")]
+position = Vector2(87, -28)
+
+[node name="Tile12" parent="Tile12" unique_id=560684098 instance=ExtResource("1_solmu")]
+position = Vector2(24, 0)
+
+[node name="Tile10" parent="Tile12" unique_id=1977046560 instance=ExtResource("1_solmu")]
+position = Vector2(-48, 24)
+
+[node name="Tile11" parent="Tile12" unique_id=1364623648 instance=ExtResource("1_solmu")]
+position = Vector2(-24, 24)
+
+[node name="Tile13" parent="Tile12" unique_id=1990306885 instance=ExtResource("1_solmu")]
+position = Vector2(0, 24)
+
+[node name="Tile12" parent="Tile12/Tile13" unique_id=1499030437 instance=ExtResource("1_solmu")]
+position = Vector2(24, 0)
+
+[node name="Tile10" parent="Tile12/Tile13" unique_id=1031152027 instance=ExtResource("1_solmu")]
+position = Vector2(-48, 24)
+
+[node name="Tile11" parent="Tile12/Tile13" unique_id=856085188 instance=ExtResource("1_solmu")]
+position = Vector2(-24, 24)
+
+[node name="Tile13" parent="Tile12/Tile13" unique_id=291089780 instance=ExtResource("1_solmu")]
+position = Vector2(0, 24)
+
+[node name="Tile12" parent="Tile12/Tile13/Tile13" unique_id=846930499 instance=ExtResource("1_solmu")]
+position = Vector2(24, 0)
+
+[node name="Tile13" parent="." unique_id=301306887 instance=ExtResource("1_solmu")]
+position = Vector2(-105, -28)
+
+[node name="Tile25" parent="." unique_id=1285529801 instance=ExtResource("1_solmu")]
+position = Vector2(63, 44)
+
+[node name="Tile26" parent="." unique_id=1593546411 instance=ExtResource("1_solmu")]
+position = Vector2(-9, 20)
+
+[node name="Tile27" parent="." unique_id=1244561864 instance=ExtResource("1_solmu")]
+position = Vector2(15, 20)
+
+[node name="Tile28" parent="." unique_id=2120254426 instance=ExtResource("1_solmu")]
+position = Vector2(-33, 44)
+
+[node name="Tile29" parent="." unique_id=1879839182 instance=ExtResource("1_solmu")]
+position = Vector2(-9, 44)
+
+[node name="Tile30" parent="." unique_id=1691432991 instance=ExtResource("1_solmu")]
+position = Vector2(15, 44)
+
+[node name="Tile12" parent="Tile30" unique_id=1530182889 instance=ExtResource("1_solmu")]
+position = Vector2(24, 0)
+
+[node name="Tile31" parent="." unique_id=300383411 instance=ExtResource("1_solmu")]
+position = Vector2(-105, 20)
+
+[node name="Tile32" parent="." unique_id=1214419399 instance=ExtResource("1_solmu")]
+position = Vector2(-81, 20)
+
+[node name="Tile33" parent="." unique_id=1274901647 instance=ExtResource("1_solmu")]
+position = Vector2(87, 44)
+
+[node name="Tile33" parent="Tile33" unique_id=39775013 instance=ExtResource("1_solmu")]
+position = Vector2(24, 0)
+
+[node name="Tile14" parent="." unique_id=1142035467 instance=ExtResource("1_solmu")]
+position = Vector2(-81, -28)
+
+[node name="Tile15" parent="." unique_id=1471234442 instance=ExtResource("1_solmu")]
+position = Vector2(-57, -28)
+
+[node name="Tile7" parent="." unique_id=1380067387 instance=ExtResource("1_solmu")]
+position = Vector2(-105, -4)
+
+[node name="Tile8" parent="." unique_id=1001556732 instance=ExtResource("1_solmu")]
+position = Vector2(-81, -4)
+
+[node name="Tile9" parent="." unique_id=696898906 instance=ExtResource("1_solmu")]
+position = Vector2(-57, -4)
+
+[node name="Tile4" parent="." unique_id=1269653405 instance=ExtResource("1_solmu")]
+position = Vector2(-105, 44)
+
+[node name="Tile5" parent="." unique_id=2041082019 instance=ExtResource("1_solmu")]
+position = Vector2(-81, 44)
+
+[node name="Tile6" parent="." unique_id=1178903871 instance=ExtResource("1_solmu")]
+position = Vector2(-57, 44)
+
+[node name="Tile" parent="." unique_id=852413842 instance=ExtResource("1_solmu")]
+position = Vector2(-33, -28)
+
+[node name="Tile2" parent="." unique_id=864189690 instance=ExtResource("1_solmu")]
+position = Vector2(-9, -28)
+
+[node name="Tile3" parent="." unique_id=1305660957 instance=ExtResource("1_solmu")]
+position = Vector2(15, -28)
+
+[node name="Hatch" parent="." unique_id=218594760 instance=ExtResource("1_uy0v0")]
+position = Vector2(2, -60)
+
+[node name="Wall3" parent="." unique_id=1123567411 instance=ExtResource("1_budtw")]
+position = Vector2(-44, -60)
+
+[node name="Wall4" parent="." unique_id=449756831 instance=ExtResource("1_budtw")]
+position = Vector2(46, -60)
+
+[node name="Wall" parent="." unique_id=2073206938 instance=ExtResource("2_uy0v0")]
+position = Vector2(94, -60)
+
+[node name="Wall2" parent="." unique_id=1583186172 instance=ExtResource("2_uy0v0")]
+position = Vector2(-92, -60)
+
+[node name="sidewall4" parent="." unique_id=1789976745 instance=ExtResource("3_solmu")]
+position = Vector2(123, -61)
+
+[node name="sidewall3" parent="sidewall4" unique_id=628714049 instance=ExtResource("3_solmu")]
+position = Vector2(-245, 1)
+
+[node name="Sidewall1" parent="." unique_id=1663181543 instance=ExtResource("4_q7i4k")]
+position = Vector2(-122, -56)
+
+[node name="Sidewall2" parent="." unique_id=1344699475 instance=ExtResource("4_q7i4k")]
+position = Vector2(-122, -20)
+
+[node name="Sidewall3" parent="." unique_id=139736742 instance=ExtResource("4_q7i4k")]
+position = Vector2(-122, 16)
+
+[node name="Sidewall7" parent="." unique_id=529202253 instance=ExtResource("4_q7i4k")]
+position = Vector2(-122, 51)
+
+[node name="sidewall2" parent="." unique_id=1275190255 instance=ExtResource("5_7ls6d")]
+position = Vector2(123, -56)
+
+[node name="sidewall5" parent="." unique_id=359890604 instance=ExtResource("5_7ls6d")]
+position = Vector2(123, -18)
+
+[node name="sidewall6" parent="." unique_id=2085618727 instance=ExtResource("5_7ls6d")]
+position = Vector2(123, 17)
+
+[node name="sidewall7" parent="." unique_id=1574870047 instance=ExtResource("5_7ls6d")]
+position = Vector2(123, 53)
+
+[node name="Sidewall7" parent="sidewall7" unique_id=1355906534 instance=ExtResource("4_q7i4k")]
+position = Vector2(-245, 7)
+
+[node name="sidewall7" parent="sidewall7" unique_id=792637419 instance=ExtResource("5_7ls6d")]
+position = Vector2(0, 8)
+
+[node name="StaticBody2D" parent="sidewall7" unique_id=2056840944 instance=ExtResource("8_7ls6d")]
+position = Vector2(-245, 28)
+
+[node name="Crate1" parent="." unique_id=777768444 instance=ExtResource("6_ppy36")]
+position = Vector2(-107, -43)
+
+[node name="Sidewall8" parent="." unique_id=1404372943 instance=ExtResource("4_q7i4k")]
+position = Vector2(-122, 51)
+
+[node name="sidewall8" parent="." unique_id=1033816556 instance=ExtResource("5_7ls6d")]
+position = Vector2(123, 53)
+
+[node name="StaticBody2D" parent="." unique_id=1276035261 instance=ExtResource("9_q7i4k")]
+position = Vector2(-93, 82)
+
+[node name="StaticBody2D2" parent="." unique_id=1172840741 instance=ExtResource("9_q7i4k")]
+position = Vector2(-46, 82)
+
+[node name="StaticBody2D3" parent="." unique_id=1942359718 instance=ExtResource("9_q7i4k")]
+position = Vector2(1, 82)
+
+[node name="StaticBody2D4" parent="." unique_id=1117218171 instance=ExtResource("9_q7i4k")]
+position = Vector2(49, 82)
+
+[node name="StaticBody2D5" parent="." unique_id=536949619 instance=ExtResource("9_q7i4k")]
+position = Vector2(96, 82)
+
+[node name="BackwallPillar" parent="." unique_id=1465052681 instance=ExtResource("8_7ls6d")]
+position = Vector2(123, 81)
