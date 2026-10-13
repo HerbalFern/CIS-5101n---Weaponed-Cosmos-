@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://sfdw3bjcnabh"]
+
+[ext_resource type="Script" uid="uid://b0kka56r72hw8" path="res://EnemiesNTraps/slime.gd" id="1_e2l6c"]
+[ext_resource type="Texture2D" uid="uid://dr0bfqqoh6kqr" path="res://Sprites/enemy1.png" id="1_llqg3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5it7u"]
+size = Vector2(20, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llqg3"]
+size = Vector2(20, 12)
+
+[node name="Slime" type="CharacterBody2D" unique_id=491490088]
+script = ExtResource("1_e2l6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=84544126]
+texture = ExtResource("1_llqg3")
+region_enabled = true
+region_rect = Rect2(2.756895, 6.231454, 24.3665, 16.763874)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1768917827]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_5it7u")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1477352111]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1544930406]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_llqg3")

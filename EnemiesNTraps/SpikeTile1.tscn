@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cxbb1b2w4eu0p"]
+
+[ext_resource type="Script" uid="uid://4asg2xja6n47" path="res://EnemiesNTraps/spiketile1.gd" id="1_irqdv"]
+[ext_resource type="Texture2D" uid="uid://crc1gox2f8ghs" path="res://Sprites/trap1.png" id="1_x4xxc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5eyp"]
+radius = 11.0
+
+[node name="SpikeTile1" type="Area2D" unique_id=2056151920]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_irqdv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2124881293]
+texture = ExtResource("1_x4xxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1045724168]
+shape = SubResource("CircleShape2D_x5eyp")

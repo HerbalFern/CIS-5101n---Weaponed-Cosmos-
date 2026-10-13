@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Weaponed Cosmos"
-run/main_scene="uid://cwipsux1pe4le"
+run/main_scene="uid://bxm1v3mvynbut"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]

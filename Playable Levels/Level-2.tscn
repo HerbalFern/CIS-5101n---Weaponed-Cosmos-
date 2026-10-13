@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://diq2ucicwolkp"]
+
+[ext_resource type="PackedScene" uid="uid://dy1hdixfry0j" path="res://Level Layout/Level-2.tscn" id="1_52h1h"]
+[ext_resource type="PackedScene" uid="uid://d0us1nlwyj0f7" path="res://Player/player.tscn" id="2_woq3o"]
+[ext_resource type="PackedScene" uid="uid://sfdw3bjcnabh" path="res://EnemiesNTraps/Slime.tscn" id="3_woq3o"]
+[ext_resource type="PackedScene" uid="uid://ukgn63rtxhjn" path="res://environment/crate.tscn" id="4_0jl13"]
+[ext_resource type="PackedScene" uid="uid://c4dk7xitdowkn" path="res://environment/backwall.tscn" id="5_exdb2"]
+[ext_resource type="PackedScene" uid="uid://cxbb1b2w4eu0p" path="res://EnemiesNTraps/SpikeTile1.tscn" id="6_bb3tq"]
+
+[node name="Node2D" type="Node2D" unique_id=385392631]
+
+[node name="TileMapLayer" parent="." unique_id=1568257879 instance=ExtResource("1_52h1h")]
+position = Vector2(-15, 22)
+
+[node name="Player" parent="." unique_id=1573757356 instance=ExtResource("2_woq3o")]
+position = Vector2(-101, -74)
+
+[node name="Slime" parent="." unique_id=491490088 instance=ExtResource("3_woq3o")]
+position = Vector2(5, 40)
+collision_layer = 4
+motion_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1348608096]
+position = Vector2(6, -21)
+zoom = Vector2(2.5, 2.5)
+
+[node name="StaticBody2D" parent="." unique_id=777768444 instance=ExtResource("4_0jl13")]
+position = Vector2(-125, 40)
+
+[node name="StaticBody2D2" parent="." unique_id=1276035261 instance=ExtResource("5_exdb2")]
+position = Vector2(-112, -55)
+
+[node name="StaticBody2D3" parent="." unique_id=1545500977 instance=ExtResource("5_exdb2")]
+position = Vector2(-65, -55)
+
+[node name="SpikeTile1" parent="." unique_id=2056151920 instance=ExtResource("6_bb3tq")]
+position = Vector2(-51, -93)
+
+[node name="StaticBody2D4" parent="." unique_id=1702349448 instance=ExtResource("4_0jl13")]
+position = Vector2(-125, -43)

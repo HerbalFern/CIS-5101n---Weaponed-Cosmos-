@@ -203,19 +203,19 @@ position = Vector2(-92, -60)
 position = Vector2(123, -61)
 
 [node name="sidewall3" parent="sidewall4" unique_id=628714049 instance=ExtResource("3_solmu")]
-position = Vector2(-245, 1)
+position = Vector2(-243, 1)
 
 [node name="Sidewall1" parent="." unique_id=1663181543 instance=ExtResource("4_q7i4k")]
-position = Vector2(-122, -56)
+position = Vector2(-120, -56)
 
 [node name="Sidewall2" parent="." unique_id=1344699475 instance=ExtResource("4_q7i4k")]
-position = Vector2(-122, -20)
+position = Vector2(-120, -20)
 
 [node name="Sidewall3" parent="." unique_id=139736742 instance=ExtResource("4_q7i4k")]
-position = Vector2(-122, 16)
+position = Vector2(-120, 16)
 
 [node name="Sidewall7" parent="." unique_id=529202253 instance=ExtResource("4_q7i4k")]
-position = Vector2(-122, 51)
+position = Vector2(-120, 51)
 
 [node name="sidewall2" parent="." unique_id=1275190255 instance=ExtResource("5_7ls6d")]
 position = Vector2(123, -56)
@@ -230,25 +230,25 @@ position = Vector2(123, 17)
 position = Vector2(123, 53)
 
 [node name="Sidewall7" parent="sidewall7" unique_id=1355906534 instance=ExtResource("4_q7i4k")]
-position = Vector2(-245, 7)
+position = Vector2(-243, 7)
 
 [node name="sidewall7" parent="sidewall7" unique_id=792637419 instance=ExtResource("5_7ls6d")]
 position = Vector2(0, 8)
 
 [node name="StaticBody2D" parent="sidewall7" unique_id=2056840944 instance=ExtResource("8_7ls6d")]
-position = Vector2(-245, 28)
+position = Vector2(-243, 28)
 
 [node name="Crate1" parent="." unique_id=777768444 instance=ExtResource("6_ppy36")]
-position = Vector2(-107, -43)
+position = Vector2(-106, -42)
 
 [node name="Sidewall8" parent="." unique_id=1404372943 instance=ExtResource("4_q7i4k")]
-position = Vector2(-122, 51)
+position = Vector2(-120, 51)
 
 [node name="sidewall8" parent="." unique_id=1033816556 instance=ExtResource("5_7ls6d")]
 position = Vector2(123, 53)
 
 [node name="StaticBody2D" parent="." unique_id=1276035261 instance=ExtResource("9_q7i4k")]
-position = Vector2(-93, 82)
+position = Vector2(-92, 82)
 
 [node name="StaticBody2D2" parent="." unique_id=1172840741 instance=ExtResource("9_q7i4k")]
 position = Vector2(-46, 82)

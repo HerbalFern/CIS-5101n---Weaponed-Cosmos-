@@ -6,189 +6,78 @@
 [ext_resource type="PackedScene" uid="uid://bpx6ryd5fkqo3" path="res://environment/sidewall1.tscn" id="3_d4uhx"]
 [ext_resource type="PackedScene" uid="uid://lg45h5tq2u72" path="res://environment/sidewall2.tscn" id="4_3yodv"]
 [ext_resource type="PackedScene" uid="uid://c51hsbg7mqk0y" path="res://environment/backwallpillar.tscn" id="5_q8c7p"]
+[ext_resource type="PackedScene" uid="uid://hvq20rhfjvtc" path="res://environment/wall1.tscn" id="7_u8fnx"]
+[ext_resource type="PackedScene" uid="uid://ca40xj15xruhv" path="res://environment/wall3.tscn" id="8_d68kp"]
 
 [node name="TileMapLayer" type="TileMapLayer" unique_id=1568257879]
+position = Vector2(-26, 39)
 
 [node name="sidewall5" parent="." unique_id=1789976745 instance=ExtResource("1_3yodv")]
-position = Vector2(-125, -125)
+position = Vector2(-125, -147)
 
 [node name="sidewall4" parent="." unique_id=488538546 instance=ExtResource("1_3yodv")]
-position = Vector2(172, -125)
+position = Vector2(172, -146)
 
 [node name="StaticBody2D" parent="." unique_id=1276035261 instance=ExtResource("1_t0egi")]
-position = Vector2(-49, 101)
+position = Vector2(-49, 54)
 
 [node name="StaticBody2D2" parent="." unique_id=529528908 instance=ExtResource("1_t0egi")]
-position = Vector2(-1, 101)
+position = Vector2(-2, 54)
 
 [node name="StaticBody2D3" parent="." unique_id=1467434812 instance=ExtResource("1_t0egi")]
-position = Vector2(47, 101)
+position = Vector2(46, 54)
 
 [node name="StaticBody2D3" parent="StaticBody2D3" unique_id=212173051 instance=ExtResource("1_t0egi")]
 position = Vector2(89, 0)
 
 [node name="StaticBody2D5" parent="StaticBody2D3" unique_id=1868926220 instance=ExtResource("1_t0egi")]
-position = Vector2(96, 0)
+position = Vector2(99, 0)
 
 [node name="StaticBody2D4" parent="." unique_id=1086346565 instance=ExtResource("1_t0egi")]
-position = Vector2(-97, 101)
+position = Vector2(-97, 54)
 
 [node name="StaticBody2D5" parent="." unique_id=1503364102 instance=ExtResource("1_t0egi")]
-position = Vector2(95, 101)
-
-[node name="TileMapLayer6" type="TileMapLayer" parent="." unique_id=1031372810]
-
-[node name="Tile" parent="TileMapLayer6" unique_id=334661070 instance=ExtResource("2_5l72n")]
-position = Vector2(-109, 39)
-
-[node name="Tile2" parent="TileMapLayer6" unique_id=233594271 instance=ExtResource("2_5l72n")]
-position = Vector2(-85, 39)
-
-[node name="Tile3" parent="TileMapLayer6" unique_id=64559501 instance=ExtResource("2_5l72n")]
-position = Vector2(-13, 39)
-
-[node name="Tile4" parent="TileMapLayer6" unique_id=11318474 instance=ExtResource("2_5l72n")]
-position = Vector2(11, 39)
-
-[node name="Tile5" parent="TileMapLayer6" unique_id=125875371 instance=ExtResource("2_5l72n")]
-position = Vector2(-61, 39)
-
-[node name="Tile6" parent="TileMapLayer6" unique_id=1803716809 instance=ExtResource("2_5l72n")]
-position = Vector2(-37, 39)
-
-[node name="Tile7" parent="TileMapLayer6" unique_id=1545950291 instance=ExtResource("2_5l72n")]
-position = Vector2(35, 39)
-
-[node name="Tile8" parent="TileMapLayer6" unique_id=951889718 instance=ExtResource("2_5l72n")]
-position = Vector2(59, 39)
-
-[node name="Tile9" parent="TileMapLayer6" unique_id=603514017 instance=ExtResource("2_5l72n")]
-position = Vector2(131, 39)
-
-[node name="Tile10" parent="TileMapLayer6" unique_id=1241359299 instance=ExtResource("2_5l72n")]
-position = Vector2(155, 39)
-
-[node name="Tile11" parent="TileMapLayer6" unique_id=1984222668 instance=ExtResource("2_5l72n")]
-position = Vector2(83, 39)
-
-[node name="Tile12" parent="TileMapLayer6" unique_id=1567672690 instance=ExtResource("2_5l72n")]
-position = Vector2(107, 39)
-
-[node name="Tile13" parent="TileMapLayer6" unique_id=1101725705 instance=ExtResource("2_5l72n")]
-position = Vector2(-109, 16)
-
-[node name="Tile14" parent="TileMapLayer6" unique_id=1611760804 instance=ExtResource("2_5l72n")]
-position = Vector2(-85, 16)
-
-[node name="Tile15" parent="TileMapLayer6" unique_id=24450138 instance=ExtResource("2_5l72n")]
-position = Vector2(-13, 16)
-
-[node name="Tile16" parent="TileMapLayer6" unique_id=148337690 instance=ExtResource("2_5l72n")]
-position = Vector2(11, 16)
-
-[node name="Tile17" parent="TileMapLayer6" unique_id=1974259671 instance=ExtResource("2_5l72n")]
-position = Vector2(-61, 16)
-
-[node name="Tile18" parent="TileMapLayer6" unique_id=2121204640 instance=ExtResource("2_5l72n")]
-position = Vector2(-37, 16)
-
-[node name="Tile19" parent="TileMapLayer6" unique_id=1492785328 instance=ExtResource("2_5l72n")]
-position = Vector2(35, 16)
-
-[node name="Tile20" parent="TileMapLayer6" unique_id=1581868695 instance=ExtResource("2_5l72n")]
-position = Vector2(59, 16)
-
-[node name="Tile21" parent="TileMapLayer6" unique_id=773582960 instance=ExtResource("2_5l72n")]
-position = Vector2(131, 16)
-
-[node name="Tile22" parent="TileMapLayer6" unique_id=1089344332 instance=ExtResource("2_5l72n")]
-position = Vector2(155, 16)
-
-[node name="Tile23" parent="TileMapLayer6" unique_id=1308277020 instance=ExtResource("2_5l72n")]
-position = Vector2(83, 16)
-
-[node name="Tile24" parent="TileMapLayer6" unique_id=629890087 instance=ExtResource("2_5l72n")]
-position = Vector2(107, 16)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=709700330]
-
-[node name="Tile" parent="TileMapLayer" unique_id=1792984147 instance=ExtResource("2_5l72n")]
-position = Vector2(-109, 86)
-
-[node name="Tile2" parent="TileMapLayer" unique_id=817010582 instance=ExtResource("2_5l72n")]
-position = Vector2(-85, 86)
-
-[node name="Tile3" parent="TileMapLayer" unique_id=818513255 instance=ExtResource("2_5l72n")]
-position = Vector2(-13, 86)
-
-[node name="Tile4" parent="TileMapLayer" unique_id=1128242281 instance=ExtResource("2_5l72n")]
-position = Vector2(11, 86)
-
-[node name="Tile5" parent="TileMapLayer" unique_id=1858707078 instance=ExtResource("2_5l72n")]
-position = Vector2(-61, 86)
-
-[node name="Tile6" parent="TileMapLayer" unique_id=1116915324 instance=ExtResource("2_5l72n")]
-position = Vector2(-37, 86)
-
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1023536444]
-
-[node name="Tile" parent="TileMapLayer2" unique_id=1364353768 instance=ExtResource("2_5l72n")]
-position = Vector2(35, 86)
-
-[node name="Tile2" parent="TileMapLayer2" unique_id=22442601 instance=ExtResource("2_5l72n")]
-position = Vector2(59, 86)
-
-[node name="Tile3" parent="TileMapLayer2" unique_id=710774844 instance=ExtResource("2_5l72n")]
-position = Vector2(131, 86)
-
-[node name="Tile4" parent="TileMapLayer2" unique_id=207968685 instance=ExtResource("2_5l72n")]
-position = Vector2(155, 86)
-
-[node name="Tile5" parent="TileMapLayer2" unique_id=2094557361 instance=ExtResource("2_5l72n")]
-position = Vector2(83, 86)
-
-[node name="Tile6" parent="TileMapLayer2" unique_id=207092660 instance=ExtResource("2_5l72n")]
-position = Vector2(107, 86)
+position = Vector2(92, 54)
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=1835731626]
 
 [node name="Tile" parent="TileMapLayer3" unique_id=2068048290 instance=ExtResource("2_5l72n")]
-position = Vector2(-109, 63)
+position = Vector2(-109, 40)
 
 [node name="Tile2" parent="TileMapLayer3" unique_id=427382822 instance=ExtResource("2_5l72n")]
-position = Vector2(-85, 63)
+position = Vector2(-85, 40)
 
 [node name="Tile3" parent="TileMapLayer3" unique_id=33315381 instance=ExtResource("2_5l72n")]
-position = Vector2(-13, 63)
+position = Vector2(-13, 40)
 
 [node name="Tile4" parent="TileMapLayer3" unique_id=1209521183 instance=ExtResource("2_5l72n")]
-position = Vector2(11, 63)
+position = Vector2(11, 40)
 
 [node name="Tile5" parent="TileMapLayer3" unique_id=2094266390 instance=ExtResource("2_5l72n")]
-position = Vector2(-61, 63)
+position = Vector2(-61, 40)
 
 [node name="Tile6" parent="TileMapLayer3" unique_id=119168577 instance=ExtResource("2_5l72n")]
-position = Vector2(-37, 63)
+position = Vector2(-37, 40)
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=928937829]
 
 [node name="Tile" parent="TileMapLayer4" unique_id=2099454147 instance=ExtResource("2_5l72n")]
-position = Vector2(35, 63)
+position = Vector2(35, 40)
 
 [node name="Tile2" parent="TileMapLayer4" unique_id=1689879420 instance=ExtResource("2_5l72n")]
-position = Vector2(59, 63)
+position = Vector2(59, 40)
 
 [node name="Tile3" parent="TileMapLayer4" unique_id=605911148 instance=ExtResource("2_5l72n")]
-position = Vector2(131, 63)
+position = Vector2(131, 40)
 
 [node name="Tile4" parent="TileMapLayer4" unique_id=699375284 instance=ExtResource("2_5l72n")]
-position = Vector2(155, 63)
+position = Vector2(155, 40)
 
 [node name="Tile5" parent="TileMapLayer4" unique_id=1888434714 instance=ExtResource("2_5l72n")]
-position = Vector2(83, 63)
+position = Vector2(83, 40)
 
 [node name="Tile6" parent="TileMapLayer4" unique_id=1753441689 instance=ExtResource("2_5l72n")]
-position = Vector2(107, 63)
+position = Vector2(107, 40)
 
 [node name="TileMapLayer5" type="TileMapLayer" parent="." unique_id=1619667278]
 
@@ -451,19 +340,10 @@ position = Vector2(107, -104)
 [node name="TileMapLayer9" type="TileMapLayer" parent="." unique_id=1028937399]
 
 [node name="Sidewall1" parent="TileMapLayer9" unique_id=1663181543 instance=ExtResource("3_d4uhx")]
-position = Vector2(-125, 79)
-
-[node name="sidewall3" parent="TileMapLayer9" unique_id=1275190255 instance=ExtResource("4_3yodv")]
-position = Vector2(172, 78)
+position = Vector2(-125, 38)
 
 [node name="BackwallPillar" parent="TileMapLayer9" unique_id=2056840944 instance=ExtResource("5_q8c7p")]
-position = Vector2(-125, 101)
-
-[node name="BackwallPillar2" parent="TileMapLayer9" unique_id=1948449572 instance=ExtResource("5_q8c7p")]
-position = Vector2(172, 100)
-
-[node name="Sidewall2" parent="TileMapLayer9" unique_id=1349505661 instance=ExtResource("3_d4uhx")]
-position = Vector2(-125, 43)
+position = Vector2(-124, 54)
 
 [node name="Sidewall3" parent="TileMapLayer9" unique_id=1951063136 instance=ExtResource("3_d4uhx")]
 position = Vector2(-125, 7)
@@ -478,10 +358,10 @@ position = Vector2(-125, -66)
 position = Vector2(-125, -102)
 
 [node name="Sidewall7" parent="TileMapLayer9" unique_id=766964945 instance=ExtResource("3_d4uhx")]
-position = Vector2(-125, -120)
+position = Vector2(-125, -119)
 
 [node name="sidewall6" parent="TileMapLayer9" unique_id=379289124 instance=ExtResource("4_3yodv")]
-position = Vector2(172, 43)
+position = Vector2(172, 38)
 
 [node name="sidewall7" parent="TileMapLayer9" unique_id=1907360620 instance=ExtResource("4_3yodv")]
 position = Vector2(172, 7)
@@ -490,12 +370,39 @@ position = Vector2(172, 7)
 position = Vector2(172, -45)
 
 [node name="sidewall9" parent="TileMapLayer9" unique_id=538624356 instance=ExtResource("4_3yodv")]
-position = Vector2(172, -83)
+position = Vector2(172, -108)
 
 [node name="sidewall10" parent="TileMapLayer9" unique_id=368549259 instance=ExtResource("4_3yodv")]
-position = Vector2(172, -118)
+position = Vector2(172, -141)
 
 [node name="sidewall11" parent="TileMapLayer9" unique_id=1181319758 instance=ExtResource("4_3yodv")]
 position = Vector2(172, -12)
 
+[node name="sidewall2" parent="TileMapLayer9" unique_id=2021278560 instance=ExtResource("4_3yodv")]
+position = Vector2(172, -75)
+
+[node name="BackwallPillar2" parent="TileMapLayer9" unique_id=1948449572 instance=ExtResource("5_q8c7p")]
+position = Vector2(172, 53)
+
 [node name="FrontWalls" type="TileMapLayer" parent="." unique_id=1774472097]
+
+[node name="Wall" parent="." unique_id=2073206938 instance=ExtResource("7_u8fnx")]
+position = Vector2(-97, -147)
+
+[node name="Wall2" parent="." unique_id=2027896571 instance=ExtResource("7_u8fnx")]
+position = Vector2(-49, -147)
+
+[node name="Wall3" parent="." unique_id=196165020 instance=ExtResource("8_d68kp")]
+position = Vector2(-2, -147)
+
+[node name="Wall4" parent="." unique_id=1146713179 instance=ExtResource("8_d68kp")]
+position = Vector2(42, -147)
+
+[node name="Wall5" parent="." unique_id=616073089 instance=ExtResource("8_d68kp")]
+position = Vector2(86, -147)
+
+[node name="Wall6" parent="." unique_id=546974859 instance=ExtResource("8_d68kp")]
+position = Vector2(122, -147)
+
+[node name="Wall7" parent="." unique_id=533857844 instance=ExtResource("8_d68kp")]
+position = Vector2(146, -147)
