@@ -173,3 +173,34 @@ During this activity, we have done the following tasks according to the instruct
 
 <img width="1144" height="640" alt="image" src="https://github.com/user-attachments/assets/a1b5db36-067e-4064-a288-dbb6a68c6ba4" />
 
+## Activity 7
+During this activity, we have done the following tasks according to the instruction document provided by our course instructor:
+- Added a **polish pass** using a `Juice` autoload:
+  - **Screen shake:** tweens the active Camera2D's `offset` to decaying random values, with stronger shakes for player damage and enemy deaths and a very light one when shooting
+  - **Hit-stop:** briefly drops `Engine.time_scale` to 0.05 for a few hundredths of a second on impacts, using an unscaled timer so it always returns to normal. The time scale is also reset on pause and player death so the game can't get stuck in slow motion
+  - **Tweened UI:** the HUD heart pops to 1.4x scale and bounces back when health changes, menu buttons scale up on hover, menu titles slide and fade in, and the win screen title bounces in
+- Implemented **save/load** with a `SaveManager` autoload that writes JSON to `user://savegame.json`:
+  - Saves the current level path, player health, elapsed time and a version number
+  - Saves automatically when going through a door and when returning to the main menu from the pause menu
+  - Added a **Continue** button to the main menu that restores the saved level, health and timer. It is hidden when no save exists
+  - Starting a new game replaces the save, and finishing the game deletes it
+  - Loading handles a missing or corrupted file by returning an empty result instead of crashing
+- Used the **profiler** (Debugger → Profiler) while playing Level 3 to find the biggest cost:
+  - **What it showed:** [the function or script and its time, e.g. "spiketile1.gd _physics_process at X ms per frame"]
+  - **Optimization made:** [e.g. "replaced per-frame get_overlapping_bodies() polling and a debug print() with body_entered/body_exited signals"]
+  - **Result:** [before and after numbers, or "no visible change in frame time but it removes unnecessary work every frame"]
+
+### Playtest 2
+- **Tester:** [who played]
+- **What I observed (without helping):** [what they struggled with or reacted to]
+- **One improvement I made because of it:** [the specific change]
+
+### AI-assisted development
+- **Tool used:** Antigravity with Gemini Flash, connected to Godot through MCP
+- **AI-drafted:** the `Juice` and `SaveManager` autoloads, the hooks into the player, enemies, HUD, menus and doors, the Continue button, and a ranked list of optimization candidates
+- **What I did and decided myself:**
+  - [which optimization I picked and why, based on the profiler]
+  - [any tuning of shake or hit-stop strength]
+  - [anything I fixed, e.g. the bullet collision mask]
+- **How I tested it:** I closed and reopened the game and used Continue to confirm that progress persisted, and checked that the Continue button disappears after finishing the game
+- Claude (AI assistant) was also used for guidance and debugging throughout the project. I can explain how the screen shake, hit-stop and save/load code works.

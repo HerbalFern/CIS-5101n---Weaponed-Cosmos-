@@ -149,9 +149,12 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		if AudioManager:
 			AudioManager.play_enemy_death()
+		Juice.shake(5.0, 0.2)
 	else:
 		if AudioManager:
 			AudioManager.play_enemy_hit()
+		Juice.shake(2.0, 0.1)
+		Juice.hit_stop(0.03)
 	if DAMAGE_PARTICLES:
 		var particles := DAMAGE_PARTICLES.instantiate()
 		particles.global_position = global_position

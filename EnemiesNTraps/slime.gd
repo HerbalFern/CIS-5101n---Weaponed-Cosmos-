@@ -110,8 +110,11 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:
 		AudioManager.play_enemy_death()
+		Juice.shake(5.0, 0.2)
 	else:
 		AudioManager.play_enemy_hit()
+		Juice.shake(2.0, 0.1)
+		Juice.hit_stop(0.03)
 	var particles := DAMAGE_PARTICLES.instantiate()
 	particles.global_position = global_position
 	get_tree().current_scene.add_child(particles)

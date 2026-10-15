@@ -18,6 +18,8 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 
 Settings="*res://settings.gd"
 AudioManager="*res://audio_manager.tscn"
+Juice="*res://juice.gd"
+SaveManager="*res://save_manager.gd"
 
 [display]
 

@@ -54,6 +54,7 @@ func shoot() -> void:
 	can_shoot = false
 	shooting = true
 	AudioManager.play_shoot()
+	Juice.shake(1.0, 0.05)
 
 	var suffix := "side"
 	if facing.y > 0:
@@ -80,6 +81,8 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	health_changed.emit(health)
 	AudioManager.play_player_hurt()
+	Juice.shake(4.0, 0.2)
+	Juice.hit_stop(0.06)
 	print("Player hit! health = ", health)
 
 	# Spawn low-pixel damage particle burst
@@ -88,6 +91,7 @@ func take_damage(amount: int) -> void:
 	get_tree().current_scene.add_child(particles)
 
 	if health <= 0:
+		Juice.reset_time_scale()
 		var game_over := preload("res://game_over.tscn").instantiate()
 		get_tree().current_scene.add_child(game_over)
 		return
