@@ -161,7 +161,6 @@ During this activity, we have done the following tasks according to the instruct
   - Added a **Continue** button to the main menu that restores the saved level, health and timer, and is hidden when no save exists
   - Starting a new game replaces the save, and finishing the game deletes it
   - A missing or corrupted save file returns an empty result instead of crashing
-- Reviewed the game for **performance** costs with the Godot profiler and a ranked list of likely candidates (per-frame physics polling and debug printing on the spike trap, HUD label updates every frame, and repeated timer creation when shooting)
 
 ### AI-assisted development
 - **Tool used:** Antigravity with Gemini Flash, connected to Godot through MCP
