@@ -130,3 +130,7 @@ During this activity, we have done the following tasks according to the instruct
   - Seven synthesized audio files (one music loop and six sound effects), in `Audio/`
 - **What I reviewed and checked:** I ran the full flow (Main Menu, Level 1, door, Level 2, win screen), the game over and restart loop, the pause menu, and the settings changes, listened to the audio to check the balance, and confirmed there were no errors in the Output panel
 - Claude (AI assistant) was also used for guidance and debugging throughout the project. I can explain how each script and scene works.
+
+<img width="1470" height="956" alt="Screenshot 2026-10-16 at 5 06 28 AM" src="https://github.com/user-attachments/assets/4c8abeca-d2aa-46a8-af8f-d7bb15042ea5" />
+<img width="602" height="344" alt="Screenshot 2026-10-16 at 5 08 08 AM" src="https://github.com/user-attachments/assets/a3df14c2-8805-4f12-b70a-22e8164438ee" />
+<img width="1470" height="956" alt="Screenshot 2026-10-16 at 5 06 28 AM" src="https://github.com/user-attachments/assets/53ee91d0-e0d8-47ea-85fd-525f7711bb8e" />
