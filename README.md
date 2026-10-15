@@ -135,3 +135,41 @@ During this activity, we have done the following tasks according to the instruct
 <img width="602" height="344" alt="Screenshot 2026-10-16 at 5 08 08 AM" src="https://github.com/user-attachments/assets/a3df14c2-8805-4f12-b70a-22e8164438ee" />
 <img width="591" height="337" alt="Screenshot 2026-10-16 at 5 08 15 AM" src="https://github.com/user-attachments/assets/691aa0e0-64e9-4f53-9a5e-c100c8c0ddf4" />
 
+
+## Activity 6
+During this activity, we have done the following tasks according to the instruction document provided by our course instructor:
+- Rewrote the **Slime** enemy (`slime.gd`) as a **finite state machine** using an `enum State` and a `match` statement in `_physics_process`:
+  - `IDLE`: stands still until the player enters `detect_range`
+  - `CHASE`: moves toward the player and flips its sprite to face them
+  - `ATTACK`: stops and damages the player every `attack_cooldown` seconds while in range
+  - `HURT`: a short stun with a white flash after being hit
+  - `DEAD`: removes the enemy once its health reaches 0
+- Created a second enemy type, the **Bat** (`bat.gd`, `Bat.tscn`), with different behavior from the Slime: it is faster and does a swooping dive attack. Its states are:
+  - `PATROL`: drifts back and forth, reversing direction on a timer
+  - `CHASE`: flies toward the player at higher speed
+  - `DIVE`: locks onto the player's position and rushes it, damaging the player once per dive
+  - `HURT` and `DEAD`: same idea as the Slime
+- Added a 3-frame flapping animation for the Bat with an AnimationPlayer, and a generated Bat sprite sheet
+- Added damage particles and SFX hooks (`AudioManager.play_enemy_hit()` and `play_enemy_death()`) to both enemies
+- Added **Level 3** with 2 Slimes and 3 Bats, and updated the doors so the flow is Level 1, Level 2, Level 3, then the Win screen
+- Exposed tuning values with `@export` (for example `chase_speed`, `detect_range`, `attack_cooldown`, `dive_speed`, `dive_range`) so the challenge can be balanced from the Inspector
+
+### AI-assisted code (what was AI-drafted vs. my own work)
+- **Tool used:** Antigravity with Gemini Flash, connected to Godot through MCP
+- **AI-drafted:**
+  - The first version of the Slime state machine in `slime.gd`
+  - The Bat's state machine in `bat.gd` and the `Bat.tscn` scene
+  - The Bat sprite sheet
+  - `Level-3.tscn`, assembled from existing scenes
+- **What I changed and fixed myself:**
+  - Fixed the bat sprite, animations and implementations.
+    
+### Detection and collision
+- Enemies detect the player by comparing the distance to the player against `detect_range`, and the Slime's `ATTACK` state and the Bat's `DIVE` state damage the player through the player's `take_damage()` function, which gives 1 second of invincibility after each hit
+- Both enemies are on collision layer 3, so the player's bullets damage them and flash them white
+
+### Testing
+- I played through Level 1, Level 2, Level 3 and the Win screen and checked each enemy's states.
+
+<img width="1144" height="640" alt="image" src="https://github.com/user-attachments/assets/a1b5db36-067e-4064-a288-dbb6a68c6ba4" />
+
