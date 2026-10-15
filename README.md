@@ -133,4 +133,5 @@ During this activity, we have done the following tasks according to the instruct
 
 <img width="1470" height="956" alt="Screenshot 2026-10-16 at 5 06 28 AM" src="https://github.com/user-attachments/assets/4c8abeca-d2aa-46a8-af8f-d7bb15042ea5" />
 <img width="602" height="344" alt="Screenshot 2026-10-16 at 5 08 08 AM" src="https://github.com/user-attachments/assets/a3df14c2-8805-4f12-b70a-22e8164438ee" />
-<img width="1470" height="956" alt="Screenshot 2026-10-16 at 5 06 28 AM" src="https://github.com/user-attachments/assets/53ee91d0-e0d8-47ea-85fd-525f7711bb8e" />
+<img width="602" height="344" alt="Screenshot 2026-10-16 at 5 08 08 AM" src="https://github.com/user-attachments/assets/6bbad569-76df-4e2e-a9c5-df41f08917aa" />
+
