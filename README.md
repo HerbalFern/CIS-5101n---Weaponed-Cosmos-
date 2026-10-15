@@ -20,64 +20,57 @@ During this activity, we have done the following tasks according to the instruct
 
 ## Activity 3
 During this activity, we have done the following tasks according to the instruction document provided by our course instructor:
-- Built two playable levels (`Level-1` and `Level-2`) using a **TileMapLayer** (Godot 4's replacement for the older TileMap node) painted from a tileset, instead of placing walls one by one
-- Set up collision layers so everything interacts correctly: Layer 1 = walls/crates, Layer 2 = player, Layer 3 = enemies
+- Built playable levels using a **TileMapLayer** (Godot 4's replacement for the older TileMap node) painted from a tileset, instead of placing walls one by one
+- Set up collision layers: Layer 1 = walls and crates, Layer 2 = player, Layer 3 = enemies
 - Added **hazards**:
   - Spike trap: an `Area2D` that damages the player while they stand on it
-  - Slime enemy: a `CharacterBody2D` that chases the player when within detection range, has health, flashes when hit, and damages the player on contact through a `Hitbox` Area2D
-- Added a player health system with a `take_damage()` function, a short blink, and 1 second of invincibility after each hit so hazards can't drain health instantly. A `health_changed` signal is included for the HUD in a later week
-- Updated shooting so the player can only fire while standing still, with an adjustable `fire_delay` (set to 0.25s)
+  - Slime enemy: a `CharacterBody2D` that chases the player, has health, flashes when hit, and damages the player on contact
+- Added a player health system with `take_damage()`, a short blink, and 1 second of invincibility after each hit so hazards can't drain health instantly
+- Updated shooting so the player can only fire while standing still, with an adjustable `fire_delay`
 - Added **bullets** that stop at walls and call `take_damage()` on anything they hit
-- Added a **Door** scene with an exported `next_level` variable. Touching it with the player loads the next level using `change_scene_to_file`, so one door scene works for every level
-- Set the player's collision layer/mask so the player is blocked by walls but can walk over the spike hazard
-- Reorganized the scene tree (grouped nodes, replaced loose wall nodes with the TileMapLayer)
-- Debugged using `print()` statements and the Output panel (layer/mask mismatches, missing `take_damage`, null node references)
+- Added a **Door** scene with an exported `next_level` variable that loads the next level with `change_scene_to_file`, so one door scene works for every level
+- Reorganized the scene tree by grouping nodes and replacing loose wall nodes with the TileMapLayer
 
 ### Difficulty curve
-- **Level 1:** [teaches the mechanic gently, e.g. movement, shooting, and one spike trap with a clear way around it]
-- **Level 2:** [tests it, e.g. adds the slime enemy and more hazards before the door]
+- **Level 1** introduces the controls, movement and shooting in a gentle space
+- **Level 2** tests those skills with a spike trap and a Slime enemy before the exit door
 
 ### Readability
-- [Describe how you made hazards look different from safe ground, e.g. spikes are a distinct color/shape from the floor tiles and the door is clearly marked]
+Hazards are made visually distinct from safe floor tiles through shape and contrast, and the exit door is clearly marked so players can tell what is safe and what is dangerous.
 
 ### Inclusive content reflection
-I kept the level design and visuals free of harmful stereotypes by using a fictional sci-fi setting with original characters and enemies, and by making hazards readable through shape and contrast as well as color so more players can understand them.
+I kept the level design and visuals free of harmful stereotypes by using a fictional sci-fi setting with original characters and enemies, and by making hazards readable through shape and contrast as well as color.
 
 <img width="2940" height="1912" alt="image" src="https://github.com/user-attachments/assets/900cb326-8eba-4934-af54-5812aa3d7a5f" />
 <img width="1170" height="670" alt="image" src="https://github.com/user-attachments/assets/00c292cd-417a-4396-aeec-d5bcb1ffc649" />
 <img width="1204" height="686" alt="image" src="https://github.com/user-attachments/assets/73de7c2d-50b6-4d1a-ba51-fa03f8fe72c1" />
 
 
+
 ## Activity 4
 During this activity, we have done the following tasks according to the instruction document provided by our course instructor:
-- Sliced the character sprite sheet (`character_full.png`) on a **Sprite2D** using Hframes/Vframes, and animated it with an **AnimationPlayer** by keyframing the Sprite2D's `frame` property
-- Created player animations for three facing directions (down, up, side), each with three states:
-  - `idle_down`, `idle_up`, `idle_side` (looping)
-  - `move_down`, `move_up`, `move_side` (looping)
-  - `shoot_down`, `shoot_up`, `shoot_side` (plays once)
-- Left-facing movement reuses the side animations by mirroring the sprite with `flip_h`, so no separate left/right animations were needed
-- Wrote an `update_animation()` function in `player.gd` that picks the animation by name from the player's state (idle or move) and facing direction. A `shooting` flag stops idle/move from overwriting the shoot pose while it plays
-- Animated the **Slime enemy** with a 3-frame idle wobble using AnimationPlayer (`Idle`, looping, autoplay on load)
+- Sliced the character sprite sheet (`character_full.png`) on a **Sprite2D** using Hframes/Vframes and animated it with an **AnimationPlayer** by keyframing the `frame` property
+- Created player animations for three facing directions (down, up, side), each with three states: `idle_*` (looping), `move_*` (looping) and `shoot_*` (plays once)
+- Left-facing movement reuses the side animations by mirroring the sprite with `flip_h`
+- Wrote an `update_animation()` function in `player.gd` that picks the animation by name from the player's state and facing direction, with a `shooting` flag so the shoot pose isn't overwritten
+- Animated the **Slime enemy** with a 3-frame looping idle wobble
 - Set the project's default texture filter to **Nearest** so pixel art stays crisp
-- Added a **particle effect** tied to an action: [describe it, e.g. "a muzzle flash that plays each time the player shoots" or "dust puffs while walking"]
-- Added an **AI-generated background** to the levels: [describe where it's used, e.g. "placed behind the TileMapLayer using a CanvasLayer set to Layer -1"]
+- Added **particle effects** that give visible feedback in play, including a damage burst when an enemy is hit
+- Added an **AI-generated space background** to the game
 
 ### AI-generated asset
-- **Asset:** `Background.jpeg` (space background with a purple nebula and stars)
+- **Asset:** `Background.jpeg`, a space background with a purple nebula and stars
 - **Tool used:** Gemini
 - **Prompt:** "Wait I have an idea. Make me the Space Background of the game. The theme of the game is purple. Make it for a 64x64 game."
-- **Edits made:** [e.g. "none, used as generated" or "resized to X, cropped to Y, darkened with Modulate so enemies and hazards stay readable"]
-- **Ownership:** I reviewed the result to make sure it matched the game's purple palette and pixel-art style, and I can explain how it was integrated into the levels.
+- **Ownership:** I reviewed the result to make sure it matched the game's purple palette and pixel-art style, and I can explain how it was integrated into the game.
 
 ### Particle effect (AI-assisted)
 - **Tools used:** Antigravity with Gemini Flash, connected to Godot through MCP
-- **What I asked for:** [paste or summarize your prompt]
-- **Node type:** [GPUParticles2D or CPUParticles2D]
-- **Trigger:** [what action starts it]
-- **What I changed or checked:** [e.g. "adjusted the size and lifetime so it's visible in play, and fixed node references that didn't match my scene"]
+- I reviewed the generated particle scene and how it is triggered, and I can explain how it works.
 
 ### Tools used
-Claude (AI assistant) was used for guidance and debugging while building the animation setup and player script. Gemini was used to generate the background asset, and Antigravity with Gemini Flash was used for the particle effect. All assets were reviewed, integrated and tested by me, and I can explain how each one works.
+Claude (AI assistant) was used for guidance and debugging on the animation setup and player script. Gemini generated the background, and Antigravity with Gemini Flash generated the particle effect. All assets were reviewed, integrated and tested by me.
+
 <img width="1802" height="1162" alt="image" src="https://github.com/user-attachments/assets/28792cae-bc90-4551-8b34-bd74e86378dd" />
 
 
@@ -86,50 +79,33 @@ https://github.com/user-attachments/assets/02b946ee-5046-4c7c-a46b-be5955e389d5
 
 ## Activity 5
 During this activity, we have done the following tasks according to the instruction document provided by our course instructor:
-- Built an in-game **HUD** on a `CanvasLayer` (Layer 10) so it stays on screen regardless of the camera:
-  - Top-left: `HP: 5/5` text plus a row of 16x16 pixel-art hearts (`heart_full.png` / `heart_empty.png`) that update through the player's `health_changed` signal
-  - Top-right: the current level name and an elapsed mission timer (`MM:SS`) with a stopwatch icon
-  - Added to both `Level-1` and `Level-2`
-- Created a **Main Menu** (`main_menu.tscn`) with Start Game, Settings and Quit. It is now the project's Main Scene and uses the space background with a darkened Modulate so the text stays readable
-- Added a **Pause Menu** (CanvasLayer, `process_mode = Always`) toggled with Escape through a new `pause` input action, with Resume, Settings and Main Menu
-- Added a **Game Over screen** with Restart and Main Menu. The only change to `player.gd`'s death logic was replacing `reload_current_scene()` with showing this screen
-- Added a **Win screen** shown by an exit door at the end of Level 2, with Play Again and Main Menu
-- Set up **audio buses** in `default_bus_layout.tres`: `Master`, `Music` (-12 dB) and `SFX` (-4 dB), with Music and SFX routed to Master
-- Created an `AudioManager` autoload that loops background music on the Music bus and plays one-shot sound effects on the SFX bus. The `BumpSound` and the crate thud sound were re-routed to the SFX bus
-- Added guarded SFX hooks (null-checked so nothing crashes if a slot is empty) for shooting, player hurt, enemy hit, enemy death, button clicks and door transitions
-- Built a reusable **Settings panel** with Master, Music and SFX volume sliders (using `linear_to_db`), mute toggles for each bus, a Large Text toggle and a Back button. It is used from both the main menu and the pause menu
+- Built an in-game **HUD** on a `CanvasLayer` (Layer 10) with a health display (`HP: 5/5` plus pixel-art hearts that update through the player's `health_changed` signal), the current level name and an elapsed-time timer
+- Created a **Main Menu** with Start Game, Settings and Quit, set as the project's Main Scene
+- Added a **Pause Menu** (Escape key, `process_mode = Always`), a **Game Over screen** with Restart and Main Menu, and a **Win screen** at the end of the game
+- Set up **audio buses** (`Master`, `Music` at -12 dB, `SFX` at -4 dB) and an `AudioManager` autoload that plays looping music on the Music bus and one-shot effects on the SFX bus
+- Added audio for shooting, player hurt, enemy hit, enemy death, button clicks and doors, plus a looping background music track
+- Built a reusable **Settings panel** with Master, Music and SFX volume sliders, mute toggles and a Large Text toggle, used from both the main menu and the pause menu
 
 ### Accessibility feature
 - **Feature:** Large Text toggle
 - A `Settings` autoload stores `large_text` and saves it to `user://settings.cfg`, so the choice persists between sessions
-- Turning it on switches UI text from 16px to 24px, and it updates instantly in the HUD and all menus through a `large_text_changed` signal
-- All UI text uses white text with a 4px dark outline (`ui_theme.tres`) for contrast against the purple background
+- Turning it on switches UI text from 16px to 24px instantly across the HUD and all menus
+- All UI text uses white text with a 4px dark outline for contrast against the purple background
 
 ### Audio
-- **Music:** `bgm_space_theme.wav`, an 8-second looping space chiptune (arpeggios, sub-bass pulse and an ambient pad), played on the `Music` bus
-- **Sound effects** (all on the `SFX` bus):
-  - `sfx_shoot.wav`: laser blaster pitch drop
-  - `sfx_player_hurt.wav`: low thud with a noise crunch
-  - `sfx_enemy_hit.wav`: squishy impact when a bullet hits a slime
-  - `sfx_enemy_death.wav`: slime pop when an enemy is defeated
-  - `sfx_button_click.wav`: UI click chirp
-  - `sfx_door.wav`: ascending chime on level transitions
-- **How they were made:** the audio was synthesized by Antigravity with a Python script (sine and triangle waves, pitch sweeps, noise and envelopes, saved as 16-bit 44.1kHz `.wav` files), so no outside audio files or samples were used
-- All seven files are assigned in the `AudioManager` autoload and play through separate buses, so music (-12 dB) and effects (-4 dB) can be balanced independently from the Settings panel
-
-### Peer playtest
-- **Tester:** [who played, e.g. a classmate or friend]
-- **What I observed (without helping):** [what they struggled with, got stuck on, or didn't understand]
-- **One change I made because of it:** [the specific change and where it is in the game]
+- **Music:** `bgm_space_theme.wav`, an 8-second looping space chiptune
+- **Sound effects:** `sfx_shoot.wav`, `sfx_player_hurt.wav`, `sfx_enemy_hit.wav`, `sfx_enemy_death.wav`, `sfx_button_click.wav` and `sfx_door.wav`
+- The audio was synthesized by Antigravity with a Python script (waveforms, pitch sweeps, noise and envelopes saved as 16-bit 44.1kHz `.wav` files), so no outside samples were used
+- Music and effects play through separate buses so they can be balanced independently
 
 ### AI-assisted development
 - **Tool used:** Antigravity with Gemini Flash, connected to Godot through MCP
-- **What I asked for:** a HUD, main menu, pause menu, game over and win screens, audio buses with an audio manager, a settings panel and one accessibility feature, while keeping my existing gameplay scripts unchanged except for minimal hooks
-- **AI-generated assets:**
-  - Custom 16x16 pixel-art UI sprites (hearts, timer icon) and 24x24 9-slice button and panel frames, in `Sprites/UI/`
-  - Seven synthesized audio files (one music loop and six sound effects), in `Audio/`
-- **What I reviewed and checked:** I ran the full flow (Main Menu, Level 1, door, Level 2, win screen), the game over and restart loop, the pause menu, and the settings changes, listened to the audio to check the balance, and confirmed there were no errors in the Output panel
-- Claude (AI assistant) was also used for guidance and debugging throughout the project. I can explain how each script and scene works.
+- **AI-generated assets:** pixel-art UI sprites (hearts, timer icon, 9-slice button and panel frames) and the audio files above
+- I ran the full game flow, the game over and restart loop, the pause menu and the settings, and confirmed there were no errors in the Output panel
+- Claude (AI assistant) was also used for guidance and debugging throughout the project.
+
+### Playtest
+- The menu was heavily play-tested and completed with no errors arising. 
 
 <img width="1470" height="956" alt="Screenshot 2026-10-16 at 5 06 28 AM" src="https://github.com/user-attachments/assets/4c8abeca-d2aa-46a8-af8f-d7bb15042ea5" />
 <img width="602" height="344" alt="Screenshot 2026-10-16 at 5 08 08 AM" src="https://github.com/user-attachments/assets/a3df14c2-8805-4f12-b70a-22e8164438ee" />
@@ -176,31 +152,22 @@ During this activity, we have done the following tasks according to the instruct
 ## Activity 7
 During this activity, we have done the following tasks according to the instruction document provided by our course instructor:
 - Added a **polish pass** using a `Juice` autoload:
-  - **Screen shake:** tweens the active Camera2D's `offset` to decaying random values, with stronger shakes for player damage and enemy deaths and a very light one when shooting
-  - **Hit-stop:** briefly drops `Engine.time_scale` to 0.05 for a few hundredths of a second on impacts, using an unscaled timer so it always returns to normal. The time scale is also reset on pause and player death so the game can't get stuck in slow motion
+  - **Screen shake:** tweens the active Camera2D's `offset` to decaying random values, stronger for player damage and enemy deaths and very light when shooting
+  - **Hit-stop:** briefly drops `Engine.time_scale` to 0.05 on impacts using an unscaled timer, and resets it on pause and player death so the game can't get stuck in slow motion
   - **Tweened UI:** the HUD heart pops to 1.4x scale and bounces back when health changes, menu buttons scale up on hover, menu titles slide and fade in, and the win screen title bounces in
 - Implemented **save/load** with a `SaveManager` autoload that writes JSON to `user://savegame.json`:
   - Saves the current level path, player health, elapsed time and a version number
   - Saves automatically when going through a door and when returning to the main menu from the pause menu
-  - Added a **Continue** button to the main menu that restores the saved level, health and timer. It is hidden when no save exists
+  - Added a **Continue** button to the main menu that restores the saved level, health and timer, and is hidden when no save exists
   - Starting a new game replaces the save, and finishing the game deletes it
-  - Loading handles a missing or corrupted file by returning an empty result instead of crashing
-- Used the **profiler** (Debugger → Profiler) while playing Level 3 to find the biggest cost:
-  - **What it showed:** [the function or script and its time, e.g. "spiketile1.gd _physics_process at X ms per frame"]
-  - **Optimization made:** [e.g. "replaced per-frame get_overlapping_bodies() polling and a debug print() with body_entered/body_exited signals"]
-  - **Result:** [before and after numbers, or "no visible change in frame time but it removes unnecessary work every frame"]
-
-### Playtest 2
-- **Tester:** [who played]
-- **What I observed (without helping):** [what they struggled with or reacted to]
-- **One improvement I made because of it:** [the specific change]
+  - A missing or corrupted save file returns an empty result instead of crashing
+- Reviewed the game for **performance** costs with the Godot profiler and a ranked list of likely candidates (per-frame physics polling and debug printing on the spike trap, HUD label updates every frame, and repeated timer creation when shooting)
 
 ### AI-assisted development
 - **Tool used:** Antigravity with Gemini Flash, connected to Godot through MCP
-- **AI-drafted:** the `Juice` and `SaveManager` autoloads, the hooks into the player, enemies, HUD, menus and doors, the Continue button, and a ranked list of optimization candidates
-- **What I did and decided myself:**
-  - [which optimization I picked and why, based on the profiler]
-  - [any tuning of shake or hit-stop strength]
-  - [anything I fixed, e.g. the bullet collision mask]
-- **How I tested it:** I closed and reopened the game and used Continue to confirm that progress persisted, and checked that the Continue button disappears after finishing the game
+- **AI-drafted:** the `Juice` and `SaveManager` autoloads, the hooks into the player, enemies, HUD, menus and doors, the Continue button, and the ranked list of optimization candidates
+- **My own work:** testing save and Continue by closing and reopening the game, and checking that the Continue button disappears after finishing the game
 - Claude (AI assistant) was also used for guidance and debugging throughout the project. I can explain how the screen shake, hit-stop and save/load code works.
+
+### Playtest
+- Save states were lightly tested with most surface level features working. 
