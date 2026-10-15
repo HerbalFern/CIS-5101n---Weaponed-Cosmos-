@@ -201,6 +201,7 @@ shape = SubResource("RectangleShape2D_xqg75")
 [node name="Muzzle" type="Marker2D" parent="." unique_id=1738160194]
 
 [node name="BumpSound" type="AudioStreamPlayer2D" parent="." unique_id=795845587]
+bus = &"SFX"
 stream = ExtResource("2_btcbx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1391760716]

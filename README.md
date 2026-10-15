@@ -84,3 +84,49 @@ Claude (AI assistant) was used for guidance and debugging while building the ani
 https://github.com/user-attachments/assets/02b946ee-5046-4c7c-a46b-be5955e389d5
 
 
+## Activity 5
+During this activity, we have done the following tasks according to the instruction document provided by our course instructor:
+- Built an in-game **HUD** on a `CanvasLayer` (Layer 10) so it stays on screen regardless of the camera:
+  - Top-left: `HP: 5/5` text plus a row of 16x16 pixel-art hearts (`heart_full.png` / `heart_empty.png`) that update through the player's `health_changed` signal
+  - Top-right: the current level name and an elapsed mission timer (`MM:SS`) with a stopwatch icon
+  - Added to both `Level-1` and `Level-2`
+- Created a **Main Menu** (`main_menu.tscn`) with Start Game, Settings and Quit. It is now the project's Main Scene and uses the space background with a darkened Modulate so the text stays readable
+- Added a **Pause Menu** (CanvasLayer, `process_mode = Always`) toggled with Escape through a new `pause` input action, with Resume, Settings and Main Menu
+- Added a **Game Over screen** with Restart and Main Menu. The only change to `player.gd`'s death logic was replacing `reload_current_scene()` with showing this screen
+- Added a **Win screen** shown by an exit door at the end of Level 2, with Play Again and Main Menu
+- Set up **audio buses** in `default_bus_layout.tres`: `Master`, `Music` (-12 dB) and `SFX` (-4 dB), with Music and SFX routed to Master
+- Created an `AudioManager` autoload that loops background music on the Music bus and plays one-shot sound effects on the SFX bus. The `BumpSound` and the crate thud sound were re-routed to the SFX bus
+- Added guarded SFX hooks (null-checked so nothing crashes if a slot is empty) for shooting, player hurt, enemy hit, enemy death, button clicks and door transitions
+- Built a reusable **Settings panel** with Master, Music and SFX volume sliders (using `linear_to_db`), mute toggles for each bus, a Large Text toggle and a Back button. It is used from both the main menu and the pause menu
+
+### Accessibility feature
+- **Feature:** Large Text toggle
+- A `Settings` autoload stores `large_text` and saves it to `user://settings.cfg`, so the choice persists between sessions
+- Turning it on switches UI text from 16px to 24px, and it updates instantly in the HUD and all menus through a `large_text_changed` signal
+- All UI text uses white text with a 4px dark outline (`ui_theme.tres`) for contrast against the purple background
+
+### Audio
+- **Music:** `bgm_space_theme.wav`, an 8-second looping space chiptune (arpeggios, sub-bass pulse and an ambient pad), played on the `Music` bus
+- **Sound effects** (all on the `SFX` bus):
+  - `sfx_shoot.wav`: laser blaster pitch drop
+  - `sfx_player_hurt.wav`: low thud with a noise crunch
+  - `sfx_enemy_hit.wav`: squishy impact when a bullet hits a slime
+  - `sfx_enemy_death.wav`: slime pop when an enemy is defeated
+  - `sfx_button_click.wav`: UI click chirp
+  - `sfx_door.wav`: ascending chime on level transitions
+- **How they were made:** the audio was synthesized by Antigravity with a Python script (sine and triangle waves, pitch sweeps, noise and envelopes, saved as 16-bit 44.1kHz `.wav` files), so no outside audio files or samples were used
+- All seven files are assigned in the `AudioManager` autoload and play through separate buses, so music (-12 dB) and effects (-4 dB) can be balanced independently from the Settings panel
+
+### Peer playtest
+- **Tester:** [who played, e.g. a classmate or friend]
+- **What I observed (without helping):** [what they struggled with, got stuck on, or didn't understand]
+- **One change I made because of it:** [the specific change and where it is in the game]
+
+### AI-assisted development
+- **Tool used:** Antigravity with Gemini Flash, connected to Godot through MCP
+- **What I asked for:** a HUD, main menu, pause menu, game over and win screens, audio buses with an audio manager, a settings panel and one accessibility feature, while keeping my existing gameplay scripts unchanged except for minimal hooks
+- **AI-generated assets:**
+  - Custom 16x16 pixel-art UI sprites (hearts, timer icon) and 24x24 9-slice button and panel frames, in `Sprites/UI/`
+  - Seven synthesized audio files (one music loop and six sound effects), in `Audio/`
+- **What I reviewed and checked:** I ran the full flow (Main Menu, Level 1, door, Level 2, win screen), the game over and restart loop, the pause menu, and the settings changes, listened to the audio to check the balance, and confirmed there were no errors in the Output panel
+- Claude (AI assistant) was also used for guidance and debugging throughout the project. I can explain how each script and scene works.

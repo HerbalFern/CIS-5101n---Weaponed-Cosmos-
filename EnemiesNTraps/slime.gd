@@ -36,6 +36,12 @@ func take_damage(amount: int) -> void:
 	print("Slime hit! health = ", health - amount)
 	health -= amount
 
+	# Audio hook for enemy hit / death
+	if health <= 0:
+		AudioManager.play_enemy_death()
+	else:
+		AudioManager.play_enemy_hit()
+
 	# Spawn low-pixel splatter damage particle burst
 	var particles := DAMAGE_PARTICLES.instantiate()
 	particles.global_position = global_position

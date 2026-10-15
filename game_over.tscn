@@ -1,0 +1,64 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_gogd"]
+[ext_resource type="Theme" path="res://ui_theme.tres" id="2_theme"]
+
+[node name="GameOver" type="CanvasLayer"]
+process_mode = 3
+layer = 25
+script = ExtResource("1_gogd")
+
+[node name="GameOverControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("2_theme")
+
+[node name="DarkOverlay" type="ColorRect" parent="GameOverControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.15, 0.02, 0.04, 0.8)
+
+[node name="CenterContainer" type="CenterContainer" parent="GameOverControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="GameOverControl/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="Title" type="Label" parent="GameOverControl/CenterContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0.1, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="GameOverControl/CenterContainer/VBox"]
+layout_mode = 2
+text = "Your weapon fell in the cosmos."
+horizontal_alignment = 1
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="GameOverControl/CenterContainer/VBox"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="RestartButton" type="Button" parent="GameOverControl/CenterContainer/VBox/ButtonsVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "Restart"
+
+[node name="MenuButton" type="Button" parent="GameOverControl/CenterContainer/VBox/ButtonsVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "Main Menu"

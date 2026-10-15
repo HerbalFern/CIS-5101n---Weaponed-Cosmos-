@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://audio_manager.gd" id="1_amgd"]
+[ext_resource type="AudioStream" path="res://Audio/bgm_space_theme.wav" id="2_bgm"]
+[ext_resource type="AudioStream" path="res://Audio/sfx_shoot.wav" id="3_shoot"]
+[ext_resource type="AudioStream" path="res://Audio/sfx_player_hurt.wav" id="4_hurt"]
+[ext_resource type="AudioStream" path="res://Audio/sfx_enemy_hit.wav" id="5_hit"]
+[ext_resource type="AudioStream" path="res://Audio/sfx_enemy_death.wav" id="6_death"]
+[ext_resource type="AudioStream" path="res://Audio/sfx_button_click.wav" id="7_click"]
+[ext_resource type="AudioStream" path="res://Audio/sfx_door.wav" id="8_door"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_amgd")
+bgm_music = ExtResource("2_bgm")
+sfx_shoot = ExtResource("3_shoot")
+sfx_player_hurt = ExtResource("4_hurt")
+sfx_enemy_hit = ExtResource("5_hit")
+sfx_enemy_death = ExtResource("6_death")
+sfx_button_click = ExtResource("7_click")
+sfx_door = ExtResource("8_door")

@@ -11,4 +11,5 @@ func _on_body_entered(body: Node) -> void:
 	print("In player group? ", body.is_in_group("player"))
 	print("next_level = '", next_level, "'")
 	if body.is_in_group("player") and next_level != "":
+		AudioManager.play_door()
 		get_tree().change_scene_to_file.call_deferred(next_level)

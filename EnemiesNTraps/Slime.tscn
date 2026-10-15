@@ -50,6 +50,8 @@ _data = {
 [node name="Slime" type="CharacterBody2D" unique_id=491490088]
 position = Vector2(2, 1)
 script = ExtResource("1_e2l6c")
+health = null
+detect_range = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=84544126]
 texture = ExtResource("1_llqg3")

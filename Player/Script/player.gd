@@ -53,6 +53,7 @@ func _physics_process(_delta: float) -> void:
 func shoot() -> void:
 	can_shoot = false
 	shooting = true
+	AudioManager.play_shoot()
 
 	var suffix := "side"
 	if facing.y > 0:
@@ -78,6 +79,7 @@ func take_damage(amount: int) -> void:
 	invincible = true
 	health -= amount
 	health_changed.emit(health)
+	AudioManager.play_player_hurt()
 	print("Player hit! health = ", health)
 
 	# Spawn low-pixel damage particle burst
@@ -86,7 +88,8 @@ func take_damage(amount: int) -> void:
 	get_tree().current_scene.add_child(particles)
 
 	if health <= 0:
-		get_tree().reload_current_scene()
+		var game_over := preload("res://game_over.tscn").instantiate()
+		get_tree().current_scene.add_child(game_over)
 		return
 
 	# Blink, then 1 second of invincibility

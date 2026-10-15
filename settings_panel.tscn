@@ -1,0 +1,136 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://ui_theme.tres" id="1_qe5rj"]
+[ext_resource type="Script" path="res://settings_panel.gd" id="2_spgd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aouea"]
+content_margin_left = 20.0
+content_margin_top = 16.0
+content_margin_right = 20.0
+content_margin_bottom = 16.0
+bg_color = Color(0.14, 0.1, 0.24, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.48, 0.38, 0.8, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="SettingsPanel" type="Control" unique_id=2015537260] script=ExtResource("2_spgd")
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1_qe5rj")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=1971210371]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.03, 0.1, 0.75)
+
+[node name="CenterPanel" type="PanelContainer" parent="." unique_id=2045016830]
+custom_minimum_size = Vector2(380, 260)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_aouea")
+
+[node name="VBox" type="VBoxContainer" parent="CenterPanel" unique_id=356032899]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="CenterPanel/VBox" unique_id=167749072]
+layout_mode = 2
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="@HSeparator@2" type="HSeparator" parent="CenterPanel/VBox" unique_id=1038484453]
+layout_mode = 2
+
+[node name="AudioGrid" type="GridContainer" parent="CenterPanel/VBox" unique_id=2109711020]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="@Label@3" type="Label" parent="CenterPanel/VBox/AudioGrid" unique_id=2005478356]
+layout_mode = 2
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="CenterPanel/VBox/AudioGrid" unique_id=1706571156]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="MasterMute" type="CheckBox" parent="CenterPanel/VBox/AudioGrid" unique_id=1155800354]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mute"
+
+[node name="@Label@4" type="Label" parent="CenterPanel/VBox/AudioGrid" unique_id=1858432794]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="CenterPanel/VBox/AudioGrid" unique_id=588124026]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="MusicMute" type="CheckBox" parent="CenterPanel/VBox/AudioGrid" unique_id=1825707622]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mute"
+
+[node name="@Label@5" type="Label" parent="CenterPanel/VBox/AudioGrid" unique_id=122576749]
+layout_mode = 2
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="CenterPanel/VBox/AudioGrid" unique_id=1371097675]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="SFXMute" type="CheckBox" parent="CenterPanel/VBox/AudioGrid" unique_id=1439085313]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mute"
+
+[node name="@HSeparator@6" type="HSeparator" parent="CenterPanel/VBox" unique_id=1432383922]
+layout_mode = 2
+
+[node name="AccessBox" type="HBoxContainer" parent="CenterPanel/VBox" unique_id=2069899966]
+layout_mode = 2
+
+[node name="@Label@7" type="Label" parent="CenterPanel/VBox/AccessBox" unique_id=1898815055]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Large Text (Accessibility)"
+
+[node name="LargeTextButton" type="CheckButton" parent="CenterPanel/VBox/AccessBox" unique_id=121279904]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="@HSeparator@8" type="HSeparator" parent="CenterPanel/VBox" unique_id=809281570]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterPanel/VBox" unique_id=1065699504]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"

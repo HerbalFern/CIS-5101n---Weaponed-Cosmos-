@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://c4dk7xitdowkn" path="res://environment/backwall.tscn" id="5_exdb2"]
 [ext_resource type="PackedScene" uid="uid://cxbb1b2w4eu0p" path="res://EnemiesNTraps/SpikeTile1.tscn" id="6_bb3tq"]
 
+[ext_resource type="PackedScene" path="res://hud.tscn" id="7_hud"]
+[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="8_pause"]
+[ext_resource type="PackedScene" path="res://environment/door.tscn" id="9_door"]
+
 [node name="Node2D" type="Node2D" unique_id=385392631]
 
 [node name="TileMapLayer" parent="." unique_id=1568257879 instance=ExtResource("1_52h1h")]
@@ -38,3 +42,11 @@ position = Vector2(-65, -55)
 
 [node name="StaticBody2D4" parent="." unique_id=1702349448 instance=ExtResource("4_0jl13")]
 position = Vector2(-125, -43)
+
+[node name="HUD" parent="." instance=ExtResource("7_hud")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_pause")]
+
+[node name="Door" parent="." instance=ExtResource("9_door")]
+position = Vector2(125, 30)
+next_level = "res://win_screen.tscn"

@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cxbb1b2w4eu0p" path="res://EnemiesNTraps/SpikeTile1.tscn" id="3_k5uah"]
 [ext_resource type="PackedScene" uid="uid://cbwx86eo5eb" path="res://environment/door.tscn" id="4_vo4ua"]
 
+[ext_resource type="PackedScene" path="res://hud.tscn" id="5_hud"]
+[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="6_pause"]
+
 [node name="Node2D" type="Node2D" unique_id=385392631]
 
 [node name="TileMapLayer" parent="." unique_id=48721696 instance=ExtResource("1_65oxy")]
@@ -21,3 +24,7 @@ zoom = Vector2(3, 3)
 
 [node name="Door" parent="." unique_id=1394054460 instance=ExtResource("4_vo4ua")]
 position = Vector2(1, 74)
+
+[node name="HUD" parent="." instance=ExtResource("5_hud")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_pause")]
