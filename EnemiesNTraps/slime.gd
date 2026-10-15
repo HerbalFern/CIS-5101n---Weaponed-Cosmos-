@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED := 20.0
+const DAMAGE_PARTICLES := preload("res://Particles/enemy_damage_particles.tscn")
 
 @export var health := 3
 @export var detect_range := 120.0
@@ -34,6 +35,12 @@ func _physics_process(_delta: float) -> void:
 func take_damage(amount: int) -> void:
 	print("Slime hit! health = ", health - amount)
 	health -= amount
+
+	# Spawn low-pixel splatter damage particle burst
+	var particles := DAMAGE_PARTICLES.instantiate()
+	particles.global_position = global_position
+	get_tree().current_scene.add_child(particles)
+
 	if health <= 0:
 		queue_free()
 		return

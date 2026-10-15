@@ -1,0 +1,28 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://Sprites/particle_shard.png" id="1_uv2vu"]
+[ext_resource type="Script" path="res://Particles/Script/damage_particles.gd" id="2_omagy"]
+
+[sub_resource type="Gradient" id="Gradient_jj2ai"]
+offsets = PackedFloat32Array(0, 0.45, 1)
+colors = PackedColorArray(0.75, 1, 0.35, 1, 0.2, 0.85, 0.3, 0.9, 0.1, 0.4, 0.15, 0)
+
+[node name="EnemyDamageParticles" type="CPUParticles2D" unique_id=1493567760]
+z_index = 10
+emitting = false
+amount = 10
+texture = ExtResource("1_uv2vu")
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 120)
+initial_velocity_min = 35.0
+initial_velocity_max = 70.0
+damping_min = 20.0
+damping_max = 40.0
+color_ramp = SubResource("Gradient_jj2ai")
+script = ExtResource("2_omagy")

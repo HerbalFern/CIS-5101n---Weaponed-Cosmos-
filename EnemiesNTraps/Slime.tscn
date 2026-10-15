@@ -4,21 +4,61 @@
 [ext_resource type="Texture2D" uid="uid://dr0bfqqoh6kqr" path="res://Sprites/enemy1.png" id="1_llqg3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5it7u"]
-size = Vector2(20, 12)
+size = Vector2(19, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llqg3"]
-size = Vector2(20, 12)
+size = Vector2(19, 11)
+
+[sub_resource type="Animation" id="Animation_e2l6c"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 2, 1]
+}
+
+[sub_resource type="Animation" id="Animation_heylh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ds08j"]
+_data = {
+&"Idle": SubResource("Animation_e2l6c"),
+&"RESET": SubResource("Animation_heylh")
+}
 
 [node name="Slime" type="CharacterBody2D" unique_id=491490088]
+position = Vector2(2, 1)
 script = ExtResource("1_e2l6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=84544126]
 texture = ExtResource("1_llqg3")
-region_enabled = true
+hframes = 3
+frame = 1
 region_rect = Rect2(2.756895, 6.231454, 24.3665, 16.763874)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1768917827]
-position = Vector2(0, -1)
+position = Vector2(-1.5, -2.5)
 shape = SubResource("RectangleShape2D_5it7u")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1477352111]
@@ -26,5 +66,10 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1544930406]
-position = Vector2(0, -1)
+position = Vector2(-1.5, -2.5)
 shape = SubResource("RectangleShape2D_llqg3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1760466982]
+libraries/ = SubResource("AnimationLibrary_ds08j")
+autoplay = &"Idle"
+playback_auto_capture = false

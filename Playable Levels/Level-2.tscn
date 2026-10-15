@@ -12,6 +12,9 @@
 [node name="TileMapLayer" parent="." unique_id=1568257879 instance=ExtResource("1_52h1h")]
 position = Vector2(-15, 22)
 
+[node name="SpikeTile1" parent="." unique_id=2056151920 instance=ExtResource("6_bb3tq")]
+position = Vector2(-51, -93)
+
 [node name="Player" parent="." unique_id=1573757356 instance=ExtResource("2_woq3o")]
 position = Vector2(-101, -74)
 
@@ -21,7 +24,7 @@ collision_layer = 4
 motion_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1348608096]
-position = Vector2(6, -21)
+position = Vector2(2, -43)
 zoom = Vector2(2.5, 2.5)
 
 [node name="StaticBody2D" parent="." unique_id=777768444 instance=ExtResource("4_0jl13")]
@@ -32,9 +35,6 @@ position = Vector2(-112, -55)
 
 [node name="StaticBody2D3" parent="." unique_id=1545500977 instance=ExtResource("5_exdb2")]
 position = Vector2(-65, -55)
-
-[node name="SpikeTile1" parent="." unique_id=2056151920 instance=ExtResource("6_bb3tq")]
-position = Vector2(-51, -93)
 
 [node name="StaticBody2D4" parent="." unique_id=1702349448 instance=ExtResource("4_0jl13")]
 position = Vector2(-125, -43)
