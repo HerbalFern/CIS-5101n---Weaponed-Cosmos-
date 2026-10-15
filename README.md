@@ -84,4 +84,3 @@ Claude (AI assistant) was used for guidance and debugging while building the ani
 https://github.com/user-attachments/assets/02b946ee-5046-4c7c-a46b-be5955e389d5
 
 
-
