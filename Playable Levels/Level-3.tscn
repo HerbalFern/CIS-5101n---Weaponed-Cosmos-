@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://level3_wc_new1"]
+
+[ext_resource type="PackedScene" uid="uid://dy1hdixfry0j" path="res://Level Layout/Level-2.tscn" id="1_lvl3"]
+[ext_resource type="PackedScene" uid="uid://d0us1nlwyj0f7" path="res://Player/player.tscn" id="2_lvl3"]
+[ext_resource type="PackedScene" uid="uid://sfdw3bjcnabh" path="res://EnemiesNTraps/Slime.tscn" id="3_lvl3"]
+[ext_resource type="PackedScene" uid="uid://cb4tenemy3wc1" path="res://EnemiesNTraps/Bat.tscn" id="4_lvl3"]
+[ext_resource type="PackedScene" uid="uid://cxbb1b2w4eu0p" path="res://EnemiesNTraps/SpikeTile1.tscn" id="5_lvl3"]
+[ext_resource type="PackedScene" path="res://hud.tscn" id="6_lvl3"]
+[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="7_lvl3"]
+[ext_resource type="PackedScene" path="res://environment/door.tscn" id="8_lvl3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_lvl3")]
+position = Vector2(-15, 22)
+
+[node name="SpikeTile1" parent="." instance=ExtResource("5_lvl3")]
+position = Vector2(-51, -93)
+
+[node name="SpikeTile2" parent="." instance=ExtResource("5_lvl3")]
+position = Vector2(30, -60)
+
+[node name="Player" parent="." instance=ExtResource("2_lvl3")]
+position = Vector2(-101, -74)
+
+[node name="Slime" parent="." instance=ExtResource("3_lvl3")]
+position = Vector2(10, 20)
+collision_layer = 4
+motion_mode = 1
+
+[node name="Slime2" parent="." instance=ExtResource("3_lvl3")]
+position = Vector2(60, -30)
+collision_layer = 4
+motion_mode = 1
+
+[node name="Bat" parent="." instance=ExtResource("4_lvl3")]
+position = Vector2(-20, 60)
+collision_layer = 4
+motion_mode = 1
+
+[node name="Bat2" parent="." instance=ExtResource("4_lvl3")]
+position = Vector2(80, 10)
+collision_layer = 4
+motion_mode = 1
+
+[node name="Bat3" parent="." instance=ExtResource("4_lvl3")]
+position = Vector2(30, -80)
+collision_layer = 4
+motion_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, -43)
+zoom = Vector2(2.5, 2.5)
+
+[node name="HUD" parent="." instance=ExtResource("6_lvl3")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_lvl3")]
+
+[node name="Door" parent="." instance=ExtResource("8_lvl3")]
+position = Vector2(125, 30)
+next_level = "res://win_screen.tscn"

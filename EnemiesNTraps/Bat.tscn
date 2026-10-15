@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cb4tenemy3wc1"]
+
+[ext_resource type="Script" uid="uid://csu6meqqedgpu" path="res://EnemiesNTraps/bat.gd" id="1_bat_script"]
+[ext_resource type="Texture2D" uid="uid://bgonecl35ri3d" path="res://Sprites/bat.png" id="2_bat_texture"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bat"]
+size = Vector2(20, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hitbox"]
+size = Vector2(20, 14)
+
+[sub_resource type="Animation" id="Animation_flap"]
+resource_name = "Flap"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bat"]
+_data = {
+&"Flap": SubResource("Animation_flap"),
+&"RESET": SubResource("Animation_reset")
+}
+
+[node name="Bat" type="CharacterBody2D" unique_id=1268698508]
+collision_layer = 4
+motion_mode = 1
+script = ExtResource("1_bat_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1830556384]
+texture = ExtResource("2_bat_texture")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2049567362]
+shape = SubResource("RectangleShape2D_bat")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=253012492]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=989705024]
+shape = SubResource("RectangleShape2D_hitbox")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=122465244]
+libraries/ = SubResource("AnimationLibrary_bat")
+autoplay = &"Flap"
+playback_auto_capture = false

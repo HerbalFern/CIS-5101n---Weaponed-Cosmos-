@@ -49,4 +49,4 @@ position = Vector2(-125, -43)
 
 [node name="Door" parent="." instance=ExtResource("9_door")]
 position = Vector2(125, 30)
-next_level = "res://win_screen.tscn"
+next_level = "res://Playable Levels/Level-3.tscn"
