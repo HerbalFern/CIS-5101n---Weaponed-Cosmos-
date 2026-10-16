@@ -1,0 +1,83 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://touch_controls.gd" id="1_tc"]
+[ext_resource type="Texture2D" path="res://Sprites/UI/touch/dpad_up.png" id="2_up"]
+[ext_resource type="Texture2D" path="res://Sprites/UI/touch/dpad_down.png" id="3_down"]
+[ext_resource type="Texture2D" path="res://Sprites/UI/touch/dpad_left.png" id="4_left"]
+[ext_resource type="Texture2D" path="res://Sprites/UI/touch/dpad_right.png" id="5_right"]
+[ext_resource type="Texture2D" path="res://Sprites/UI/touch/shoot.png" id="6_shoot"]
+[ext_resource type="Texture2D" path="res://Sprites/UI/touch/pause.png" id="7_pause"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpad"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shoot"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pause"]
+size = Vector2(36, 36)
+
+[node name="TouchControls" type="CanvasLayer"]
+layer = 15
+script = ExtResource("1_tc")
+
+[node name="ControlsRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DpadUp" type="TouchScreenButton" parent="ControlsRoot"]
+position = Vector2(120, 430)
+texture_normal = ExtResource("2_up")
+shape = SubResource("RectangleShape2D_dpad")
+shape_centered = false
+passby_press = true
+action = "move_up"
+visibility_mode = 0
+
+[node name="DpadDown" type="TouchScreenButton" parent="ControlsRoot"]
+position = Vector2(120, 546)
+texture_normal = ExtResource("3_down")
+shape = SubResource("RectangleShape2D_dpad")
+shape_centered = false
+passby_press = true
+action = "move_down"
+visibility_mode = 0
+
+[node name="DpadLeft" type="TouchScreenButton" parent="ControlsRoot"]
+position = Vector2(62, 488)
+texture_normal = ExtResource("4_left")
+shape = SubResource("RectangleShape2D_dpad")
+shape_centered = false
+passby_press = true
+action = "move_left"
+visibility_mode = 0
+
+[node name="DpadRight" type="TouchScreenButton" parent="ControlsRoot"]
+position = Vector2(178, 488)
+texture_normal = ExtResource("5_right")
+shape = SubResource("RectangleShape2D_dpad")
+shape_centered = false
+passby_press = true
+action = "move_right"
+visibility_mode = 0
+
+[node name="ShootButton" type="TouchScreenButton" parent="ControlsRoot"]
+position = Vector2(1000, 490)
+texture_normal = ExtResource("6_shoot")
+shape = SubResource("RectangleShape2D_shoot")
+shape_centered = false
+action = "shoot"
+visibility_mode = 0
+
+[node name="PauseButton" type="TouchScreenButton" parent="ControlsRoot"]
+position = Vector2(558, 14)
+texture_normal = ExtResource("7_pause")
+shape = SubResource("RectangleShape2D_pause")
+shape_centered = false
+action = "pause"
+visibility_mode = 0

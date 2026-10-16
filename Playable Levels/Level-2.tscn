@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://hud.tscn" id="7_hud"]
 [ext_resource type="PackedScene" path="res://pause_menu.tscn" id="8_pause"]
 [ext_resource type="PackedScene" path="res://environment/door.tscn" id="9_door"]
+[ext_resource type="PackedScene" path="res://touch_controls.tscn" id="10_touch"]
 
 [node name="Node2D" type="Node2D" unique_id=385392631]
 
@@ -50,3 +51,5 @@ position = Vector2(-125, -43)
 [node name="Door" parent="." instance=ExtResource("9_door")]
 position = Vector2(125, 30)
 next_level = "res://Playable Levels/Level-3.tscn"
+
+[node name="TouchControls" parent="." instance=ExtResource("10_touch")]

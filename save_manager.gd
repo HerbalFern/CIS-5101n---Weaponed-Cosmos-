@@ -42,6 +42,7 @@ func save_game(level_path: String, health: int, elapsed_time: float) -> void:
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
 		file.store_string(json_string)
+		file.flush()
 		file.close()
 		print("[SaveManager] Game saved successfully: Level='%s', HP=%d, Time=%.1fs" % [level_path, health, elapsed_time])
 	else:
@@ -90,11 +91,12 @@ func load_game() -> Dictionary:
 # Removes the save file from disk (called on victory or when starting a fresh game).
 func delete_save() -> void:
 	if FileAccess.file_exists(SAVE_PATH):
-		var err := DirAccess.remove_absolute(SAVE_PATH)
-		if err == OK:
-			print("[SaveManager] Save file deleted.")
-		else:
-			push_warning("[SaveManager] Failed to delete save file, error code: %d" % err)
+		var dir := DirAccess.open("user://")
+		if dir and dir.file_exists("savegame.json"):
+			dir.remove("savegame.json")
+		if FileAccess.file_exists(SAVE_PATH):
+			DirAccess.remove_absolute(SAVE_PATH)
+		print("[SaveManager] Save file deleted.")
 
 # Initiates a new game at Level-1, resetting player stats and replacing existing save.
 func start_new_game() -> void:

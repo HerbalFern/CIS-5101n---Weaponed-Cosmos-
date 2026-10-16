@@ -164,9 +164,28 @@ During this activity, we have done the following tasks according to the instruct
 
 ### AI-assisted development
 - **Tool used:** Antigravity with Gemini Flash, connected to Godot through MCP
-- **AI-drafted:** the `Juice` and `SaveManager` autoloads, the hooks into the player, enemies, HUD, menus and doors, the Continue button, and the ranked list of optimization candidates
-- **My own work:** testing save and Continue by closing and reopening the game, and checking that the Continue button disappears after finishing the game
+- **AI-drafted:** the `Juice` and `SaveManager` autoloads, the hooks into the player, enemies, HUD, menus and doors, the Continue button, and a ranked list of optimization candidates
+- **What I did and decided myself:**
+  - [which optimization I picked and why, based on the profiler]
+  - [any tuning of shake or hit-stop strength]
+  - [anything I fixed, e.g. the bullet collision mask]
+- **How I tested it:** I closed and reopened the game and used Continue to confirm that progress persisted, and checked that the Continue button disappears after finishing the game
 - Claude (AI assistant) was also used for guidance and debugging throughout the project. I can explain how the screen shake, hit-stop and save/load code works.
 
-### Playtest
-- Save states were lightly tested with most surface level features working. 
+## Activity 8
+During this activity, we have done the following tasks according to the instruction document provided by our course instructor:
+- Installed the Godot **export templates** (Editor → Manage Export Templates) and created export presets in `export_presets.cfg`
+- Exported the game to **two platforms**:
+  - **macOS:** exported as a `.zip` (unsigned, so it is opened the first time with right-click → Open)
+  - **Web:** exported as HTML5 (`index.html`, `.wasm` and `.pck`) with thread support off so it runs on a plain static server, and tested through a local server (`python3 -m http.server`)
+- Tested each export by running it: main menu, Start and Continue, shooting, enemies, pause menu, audio and the win screen
+- Made **platform-specific tweaks**:
+  - **Web scaling:** set the window Stretch Mode to `canvas_items` and Aspect to `keep` so the game scales cleanly in the browser without stretching the pixel art
+  - **Touch controls:** added a `touch_controls` CanvasLayer with an on-screen D-pad, a Shoot button and a Pause button, mapped to the existing input actions (`move_*`, `shoot`, `pause`) through `TouchScreenButton`, so no second input system was needed. It only shows on touch devices (`DisplayServer.is_touchscreen_available()`)
+- Checked that saving still works on Web, since `user://` is stored in the browser instead of a folder on disk
+- Kept the builds in the `builds/` folder and checked file sizes against GitHub's 100 MB limit
+
+### Team Git practice
+- Created a separate practice repository and practiced the team workflow:
+  - Created a **branch**, made a change, and opened a **pull request** on GitHub, then merged it
+  - Resolved a **merge conflict** 
